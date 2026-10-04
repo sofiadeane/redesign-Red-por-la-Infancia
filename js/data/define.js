@@ -162,7 +162,7 @@ export const valueCategories = {
   },
   equipo: {
     name: "Autonomía para el equipo",
-    color: "var(--team-soft)",
+    color: "#c3ceff",
   },
   fuera: {
     name: "Apartadas",

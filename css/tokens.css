@@ -27,7 +27,6 @@
 
   /* Equipo de Red por la Infancia: identidad de 3 colores */
   --team: linear-gradient(120deg, var(--pink), var(--lime) 50%, var(--blue));
-  --team-soft: linear-gradient(120deg, #ffc2dc, #def59c 50%, #c3ceff);
 
   --r: 22px;
   --r-sm: 14px;
