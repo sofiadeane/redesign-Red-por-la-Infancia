@@ -192,7 +192,7 @@
   width: min(1120px, 100% - 40px);
   margin: 12px auto 0;
 }
-.note {
+.sticky {
   position: absolute;
   left: 0;
   top: 0;
@@ -212,7 +212,7 @@
   will-change: transform, opacity;
   transform-origin: 50% 0;
 }
-.note::before {
+.sticky::before {
   content: "";
   position: absolute;
   top: -7px;
@@ -224,7 +224,7 @@
   border-radius: 2px;
   transform: rotate(-3deg);
 }
-.note__who {
+.sticky__who {
   display: none;
   align-items: center;
   gap: 8px;
@@ -234,12 +234,12 @@
   font-size: 12px;
   font-weight: 600;
 }
-.note__who img {
+.sticky__who img {
   width: 26px;
   height: 26px;
   border-radius: 50%;
 }
-.note.is-final .note__who {
+.sticky.is-final .sticky__who {
   display: flex;
 }
 .vp__legend {

@@ -183,4 +183,36 @@ export const personas = [
     pages: "Evidencia, INSPIRE, WePROTECT, Recursos Legales",
     ga: "Evidencia se visita mayormente desde la computadora (186 vs 83 vistas), igual que INSPIRE y WePROTECT.",
   },
+  {
+    id: "maya",
+    group: "UserG",
+    name: "Maya",
+    role: "Aliada internacional",
+    quote: "Quiero entender qué hacen y cómo, pero el sitio está solo en español",
+    primary: true,
+    age: "39 años",
+    location: "Manila, Filipinas",
+    job: "Oficial de programas en una red regional de protección infantil",
+    device: "Celular durante la conferencia; notebook para el seguimiento",
+    arrives:
+      "Escanea el QR de una presentación de Red por la Infancia en la Conferencia Mundial de Manila (noviembre 2026)",
+    context:
+      "En la conferencia de Manila de noviembre escucha a Red por la Infancia en un panel sobre INSPIRE y quiere evaluar una alianza. No habla español: necesita entender rápido quiénes son, qué hacen, con qué evidencia y a quién escribir, antes de recomendarlos a su organización.",
+    goals: [
+      "Leer el sitio en inglés (o en su idioma)",
+      "Entender en pocos minutos la misión, los programas y el impacto",
+      "Encontrar evidencia y materiales para compartir con su equipo",
+      "Saber cómo y a quién contactar para una alianza",
+    ],
+    frustrations: [
+      "No hay una versión en inglés clara; el selector flotante de idioma tapa contenido",
+      "La traducción automática del navegador rompe los textos dentro de imágenes",
+      '"Nuestro Trabajo" no tiene una página que explique el trabajo de la fundación',
+      "No hay un resumen institucional ni un contacto para alianzas internacionales",
+    ],
+    needs:
+      "Selector de idioma visible, páginas clave traducidas por personas, un resumen institucional descargable en inglés y un contacto para alianzas.",
+    pages: "¿Quiénes Somos?, INSPIRE, Conferencia Mundial Manila, Evidencia, Contacto",
+    ga: "El 31% de los usuarios está fuera de Argentina e inglés es el 2º idioma del navegador. La página de la Conferencia Mundial de Manila tiene la interacción más alta del sitio (2,18 vistas por usuario y 58 s), e INSPIRE · Manila 2026 creció 54% en una semana.",
+  },
 ];

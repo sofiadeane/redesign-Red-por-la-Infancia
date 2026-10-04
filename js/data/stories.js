@@ -221,4 +221,71 @@ export const stories = [
     ],
     evidence: "hoy no hay ningún evento clave configurado.",
   },
+  {
+    id: "US-21",
+    priority: "Debe",
+    persona: "maya",
+    text: "Como aliada internacional, quiero elegir el idioma del sitio desde cualquier pantalla para poder leerlo en inglés.",
+    criteria: [
+      "El selector de idioma está en el header, en celular y en computadora, y no tapa contenido",
+      "Muestra el nombre de cada idioma en su propio idioma (English, Español)",
+      "Recuerda la elección y lleva a la misma página en el otro idioma",
+    ],
+    evidence:
+      "hoy solo hay un selector flotante que tapa contenido; inglés es el 2º idioma del navegador entre los usuarios.",
+  },
+  {
+    id: "US-22",
+    priority: "Debe",
+    persona: "maya",
+    text: "Como aliada internacional, quiero leer en inglés las páginas institucionales para entender qué hace la fundación y cómo trabaja.",
+    criteria: [
+      "¿Quiénes Somos?, Nuestro Trabajo, INSPIRE, conferencias, Evidencia y Contacto tienen versión en inglés",
+      "Las traducciones son revisadas por una persona, no automáticas",
+      "Cada página indica su idioma (hreflang) para que Google muestre la versión correcta",
+    ],
+    evidence:
+      "la página de la Conferencia Mundial de Manila tiene la interacción más alta del sitio (2,18 vistas por usuario).",
+  },
+  {
+    id: "US-23",
+    priority: "Debe",
+    persona: "maya",
+    text: "Como aliada internacional, quiero un resumen institucional en inglés que pueda descargar y compartir con mi equipo.",
+    criteria: [
+      'Hay una página "Who we are" con misión, programas, alianzas e impacto en números',
+      "Se puede descargar como PDF de una o dos páginas",
+      "Está lista antes de la conferencia de Manila y el QR de las presentaciones lleva ahí",
+    ],
+    evidence:
+      "es lo más rápido de tener listo antes de la conferencia de Manila de noviembre, mientras se traduce el resto del sitio.",
+  },
+  {
+    id: "US-24",
+    priority: "Debería",
+    persona: "maya",
+    text: "Como aliada internacional, quiero un contacto para alianzas y prensa internacional para proponer un trabajo conjunto.",
+    criteria: [
+      "Hay un formulario o mail para alianzas internacionales, en inglés",
+      "Se indica en qué idiomas responde el equipo y en qué plazo",
+    ],
+  },
+  {
+    id: "US-25",
+    priority: "Podría",
+    persona: "maya",
+    text: "Como aliada internacional, quiero ver el sitio en más idiomas (por ejemplo, portugués o francés) para compartirlo con colegas de otros países.",
+    criteria: [
+      "El sistema de idiomas permite sumar nuevos idiomas sin rehacer páginas",
+      "Se priorizan según los datos de Analytics y las conferencias de cada año",
+    ],
+  },
+  {
+    id: "US-26",
+    priority: "Debería",
+    persona: "equipo",
+    text: "Como equipo, quiero cargar la traducción de cada página dentro de la misma plantilla para mantener el sitio en varios idiomas sin depender de IT.",
+    criteria: ["Cada plantilla tiene campos por idioma", "Se ve qué páginas no tienen traducción todavía"],
+    evidence: "hoy cada página se arma desde cero; duplicarlas por idioma multiplicaría el trabajo.",
+  },
 ];

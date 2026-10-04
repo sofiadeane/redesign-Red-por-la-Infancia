@@ -5,11 +5,11 @@
 
 export const central = {
   problem:
-    "Las personas que llegan a redporlainfancia.org, la mitad desde el celular, no logran encontrar rápido la ayuda, la información o la forma de colaborar que buscan, porque el sitio no está pensado para el celular, esconde las acciones clave y su contenido es difícil de recorrer y de mantener.",
+    "Las personas que llegan a redporlainfancia.org, la mitad desde el celular y casi un tercio desde fuera de Argentina, no logran encontrar rápido la ayuda, la información o la forma de colaborar que buscan, porque el sitio no está pensado para el celular, solo está en español, esconde las acciones clave y su contenido es difícil de recorrer y de mantener.",
   hypothesis:
-    "Si rediseñamos el sitio con un enfoque mobile-first, accesos fijos a pedir ayuda y a donar, y contenido organizado por público, entonces más personas van a encontrar lo que buscan en pocos toques y la fundación va a recibir más pedidos de ayuda derivados, consultas y donaciones.",
+    "Si rediseñamos el sitio con un enfoque mobile-first, accesos fijos a pedir ayuda y a donar, contenido organizado por público y una versión en inglés de las páginas institucionales, entonces más personas van a encontrar lo que buscan en pocos toques y la fundación va a recibir más pedidos de ayuda derivados, consultas, donaciones y propuestas de alianzas internacionales.",
   value:
-    "Un sitio que conecta a cada persona con la ayuda, la información o la forma de colaborar que necesita, en pocos toques y desde cualquier celular.",
+    "Un sitio que conecta a cada persona con la ayuda, la información o la forma de colaborar que necesita, en pocos toques, desde cualquier celular y en su idioma.",
 };
 
 export const uniqueValueProposition =
@@ -110,13 +110,29 @@ export const defineItems = [
     valueProposition: "Repositorio de investigaciones con fichas y cita sugerida",
   },
   {
+    persona: "maya",
+    who: "una aliada internacional que conoció a la fundación en una conferencia y no habla español",
+    need: "leer el sitio en inglés y entender en pocos minutos qué hace la fundación, cómo trabaja y a quién contactar",
+    because:
+      'el sitio solo está en español, el selector de idioma tapa contenido, "Nuestro Trabajo" no explica el trabajo y no hay un contacto para alianzas, aunque la página de la Conferencia Mundial de Manila es la de mayor interacción del sitio',
+    painPoints: ["proceso", "financiero"],
+    stories: "US-21, US-22, US-23, US-24, US-25",
+    hypothesis: {
+      if: "el sitio tiene un selector de idioma visible, las páginas institucionales están en inglés y hay un resumen descargable y un contacto para alianzas",
+      then: "Maya va a entender el trabajo de la fundación en menos de cinco minutos y va a poder proponer una alianza",
+      metric:
+        "Visitas a la versión en inglés, escaneos del QR, descargas del kit institucional y contactos internacionales durante y después de la conferencia de Manila (noviembre), comparados con la conferencia anterior",
+    },
+    valueProposition: "Sitio en inglés, con resumen institucional y contacto para alianzas",
+  },
+  {
     persona: "equipo",
     who: "el equipo de comunicación, que mantiene el sitio día a día",
     need: "publicar campañas y recursos nuevos sin depender del equipo de IT",
     because:
       "cada página se arma desde cero en Divi, no hay plantillas y no hay forma de medir si el sitio cumple su objetivo",
     painPoints: ["soporte", "proceso"],
-    stories: "US-19, US-20",
+    stories: "US-19, US-20, US-26",
     hypothesis: {
       if: "el sitio usa plantillas editables para campañas, recursos y noticias, y mide eventos clave en Analytics",
       then: "el equipo va a publicar contenido nuevo sin depender de IT y va a saber qué funciona",
@@ -133,7 +149,7 @@ export const valueCategories = {
     color: "#ffc2dc",
   },
   acceso: {
-    name: "Accesible desde cualquier celular",
+    name: "Accesible desde cualquier celular e idioma",
     color: "#d6c9ff",
   },
   claro: {
@@ -287,7 +303,20 @@ export const brainstorm = [
     category: "fuera",
   },
   {
-    text: "Versión en inglés",
+    text: "Versión en inglés de las páginas institucionales",
+    category: "acceso",
+    persona: "maya",
+  },
+  {
+    text: "Selector de idioma visible en el header",
+    category: "acceso",
+  },
+  {
+    text: "Kit institucional descargable en inglés",
+    category: "claro",
+  },
+  {
+    text: "Más idiomas (portugués, francés)",
     category: "fuera",
   },
   {

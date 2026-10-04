@@ -208,3 +208,47 @@
     font-size: 42px;
   }
 }
+
+/* Próximo hito */
+.summary__milestone {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: -24px 0 48px;
+  padding: 18px 22px;
+  text-decoration: none;
+  color: var(--ink-2);
+  background: linear-gradient(120deg, #ecf8f7, #fff);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.summary__milestone:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+.summary__milestone b {
+  color: var(--ink);
+}
+.summary__milestone .milestone__date {
+  font-size: 20px;
+  min-width: 84px;
+  padding: 10px;
+}
+.summary__milestone-cta {
+  margin-left: auto;
+  flex: none;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+@media (max-width: 760px) {
+  .summary__milestone {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .summary__milestone-cta {
+    margin-left: 0;
+  }
+}

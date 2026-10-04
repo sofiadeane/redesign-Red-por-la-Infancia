@@ -13,3 +13,17 @@ export const topPages = [
   { name: "Evidencia", views: 269 },
   { name: "Quiero Colaborar", views: 241, highlight: true },
 ];
+
+/**
+ * Usuarios activos por país. Parte del tráfico de EE.UU. viene de centros de datos
+ * (Ashburn, Council Bluffs), así que probablemente incluye bots.
+ */
+export const topCountries = [
+  { name: "Argentina", views: 3700 },
+  { name: "Estados Unidos", views: 687, highlight: true },
+  { name: "China", views: 132, highlight: true },
+  { name: "México", views: 103, highlight: true },
+  { name: "España", views: 58, highlight: true },
+  { name: "Irlanda", views: 54, highlight: true },
+  { name: "Reino Unido", views: 53, highlight: true },
+];

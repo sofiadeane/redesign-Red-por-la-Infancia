@@ -1,15 +1,16 @@
 /**
- * Datos de uso: gráfico de barras de páginas más vistas.
+ * Datos de uso: gráficos de barras de páginas más vistas y de países.
  */
 import { $ } from "../utils/dom.js";
-import { topPages } from "../data/analytics.js";
+import { topCountries, topPages } from "../data/analytics.js";
 
 const MIN_BAR_WIDTH = 8;
 
-export function initAnalytics() {
-  const max = Math.max(...topPages.map((page) => page.views));
+/** Renderiza una lista de barras horizontales proporcionales al valor máximo. */
+function renderBars(container, items) {
+  const max = Math.max(...items.map((item) => item.views));
 
-  $("#bars").innerHTML = topPages
+  container.innerHTML = items
     .map(({ name, views, highlight }) => {
       const width = Math.max(MIN_BAR_WIDTH, (views / max) * 100);
       return `
@@ -22,4 +23,9 @@ export function initAnalytics() {
         </li>`;
     })
     .join("");
+}
+
+export function initAnalytics() {
+  renderBars($("#bars"), topPages);
+  renderBars($("#countryBars"), topCountries);
 }

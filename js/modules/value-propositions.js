@@ -23,12 +23,13 @@ const PHASES = [
     until: 0.66,
     title: "Después, el filtro.",
     caption:
-      "Se caen las ideas que no resuelven el punto de dolor más grande de ninguna persona, como el chatbot, el modo oscuro o la app nativa.",
+      "Se caen las ideas que no resuelven el punto de dolor más grande de ninguna persona, como el chatbot, el modo oscuro o la app nativa. Más idiomas quedan para más adelante.",
   },
   {
     until: Infinity,
     title: "Lo que sobrevive.",
-    caption: "Siete propuestas de valor, cada una conectada con la necesidad principal de una persona.",
+    caption:
+      "Ocho propuestas de valor, cada una conectada con la necesidad principal de una persona. La versión en inglés, que al principio descartamos, volvió con Maya.",
   },
 ];
 
@@ -51,15 +52,15 @@ const valuePropositionFor = (id) => defineItems.find((item) => item.persona === 
 
 function createNote(idea, index, random) {
   const element = document.createElement("div");
-  element.className = "note";
+  element.className = "sticky";
   element.style.setProperty("--nc", valueCategories[idea.category].color);
   element.innerHTML = `
-    <span class="note__text">${escapeHtml(idea.text)}</span>
-    ${idea.persona ? `<span class="note__who"><img src="${avatarSrc(idea.persona)}" alt="">${escapeHtml(personaName(idea.persona))}</span>` : ""}`;
+    <span class="sticky__text">${escapeHtml(idea.text)}</span>
+    ${idea.persona ? `<span class="sticky__who"><img src="${avatarSrc(idea.persona)}" alt="">${escapeHtml(personaName(idea.persona))}</span>` : ""}`;
 
   return {
     element,
-    text: element.querySelector(".note__text"),
+    text: element.querySelector(".sticky__text"),
     idea,
     survives: Boolean(idea.persona),
     order: index / brainstorm.length,

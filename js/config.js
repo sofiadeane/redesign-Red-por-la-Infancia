@@ -10,6 +10,7 @@ export const personaColors = {
   camila: "var(--mint)",
   diego: "var(--orange)",
   ana: "var(--purple)",
+  maya: "var(--teal)",
   equipo: "var(--blue)",
 };
 

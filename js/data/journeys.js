@@ -291,4 +291,59 @@ export const journeys = [
       },
     ],
   },
+  {
+    persona: "maya",
+    goal: "Entender qué hace Red por la Infancia y cómo trabaja, para evaluar una alianza después de una conferencia internacional.",
+    mood: [4, 3, 1, 2, 2, 3],
+    steps: [
+      {
+        action: "Conocer a RxI en una conferencia",
+        tasks: ["Escuchar su panel sobre INSPIRE", "Escanear el QR o anotar el sitio"],
+        feelings: ["Interesada", "Curiosa"],
+        opportunities: ["QR que lleve a una página en inglés", "Link corto y fácil de recordar"],
+      },
+      {
+        action: "Entrar al sitio",
+        tasks: ["Abrir el link en el celular", "Encontrarse con todo en español"],
+        feelings: ["Confundida"],
+        opportunities: ["Detectar el idioma del navegador y sugerir la versión en inglés"],
+      },
+      {
+        action: "Buscar la versión en inglés",
+        tasks: [
+          "Buscar un selector de idioma",
+          "Probar el widget flotante",
+          "Usar la traducción del navegador",
+        ],
+        feelings: ["Frustrada", "Perdida"],
+        opportunities: ["Selector de idioma visible en el header", "Páginas traducidas por personas"],
+      },
+      {
+        action: "Entender qué hacen y cómo",
+        tasks: [
+          "Leer ¿Quiénes Somos?",
+          "Intentar leer textos dentro de imágenes",
+          "Buscar programas e impacto",
+        ],
+        feelings: ["Insegura", "Abrumada"],
+        opportunities: [
+          'Página "Who we are" en 2 minutos',
+          "Impacto en números",
+          "Texto real, no en imágenes",
+        ],
+      },
+      {
+        action: "Revisar evidencia y alianzas",
+        tasks: ["Entrar a INSPIRE y Evidencia", "Buscar informes para compartir"],
+        feelings: ["Interesada", "Impaciente"],
+        opportunities: ["Resúmenes de investigaciones en inglés", "Kit institucional descargable"],
+      },
+      {
+        action: "Contactar para una alianza",
+        tasks: ["Buscar un contacto internacional", "Escribir al mail general en inglés"],
+        feelings: ["Dudas", "Esperanzada"],
+        opportunities: ["Formulario de alianzas en inglés", "Aclarar idiomas y plazos de respuesta"],
+      },
+    ],
+  },
 ];
