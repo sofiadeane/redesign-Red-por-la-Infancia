@@ -1,2 +1,5 @@
-# redesign-Red-por-la-Infancia
+# Redesign-Red-por-la-Infancia
 Un repositorio que documenta el proceso de rediseño de la plataforma de Fundación Red por la Infancia
+
+## Link para ver el proceso de rediseño
+https://sofiadeane.github.io/redesign-Red-por-la-Infancia/
