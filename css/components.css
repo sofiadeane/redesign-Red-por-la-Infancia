@@ -362,19 +362,3 @@
 .pm__head .persona__badge {
   background: rgba(255, 255, 255, 0.75);
 }
-
-/* Insignia de fecha (hitos) */
-.milestone__date {
-  flex: none;
-  display: inline-grid;
-  place-items: center;
-  min-width: 96px;
-  padding: 12px 14px;
-  border-radius: var(--r-sm);
-  background: var(--teal);
-  color: #fff;
-  font-family: var(--f-display);
-  font-size: 26px;
-  line-height: 1;
-  text-align: center;
-}

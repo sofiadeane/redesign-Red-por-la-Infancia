@@ -28,8 +28,7 @@ const PHASES = [
   {
     until: Infinity,
     title: "Lo que sobrevive.",
-    caption:
-      "Ocho propuestas de valor, cada una conectada con la necesidad principal de una persona. La versión en inglés, que al principio descartamos, volvió con Maya.",
+    caption: "Ocho propuestas de valor, cada una conectada con la necesidad principal de una persona.",
   },
 ];
 
@@ -71,12 +70,41 @@ function createNote(idea, index, random) {
   };
 }
 
+/** Columnas y ancho de la grilla final. En celular es una sola columna de notas compactas. */
+function gridColumns(boardWidth) {
+  if (boardWidth < 600) return { columns: 1, width: boardWidth };
+  const columns = boardWidth < 900 ? 3 : 4;
+  const width = Math.min(MAX_NOTE_WIDTH, (boardWidth - (columns - 1) * GRID_GAP) / columns);
+  return { columns, width };
+}
+
+/** Mide la altura más alta de las notas finales (texto final, ancho final). */
+function measureFinalHeight(board, survivors) {
+  const { width } = gridColumns(board.width);
+  const probe = survivors[0].element.cloneNode(true);
+  probe.classList.add("is-final");
+  Object.assign(probe.style, { width: `${width}px`, transform: "none", opacity: "0", visibility: "hidden" });
+  board.element.appendChild(probe);
+
+  const height = Math.max(
+    ...survivors.map((note) => {
+      probe.querySelector(".sticky__text").textContent = valuePropositionFor(note.idea.persona);
+      return probe.offsetHeight;
+    }),
+  );
+  probe.remove();
+  return height;
+}
+
+/**
+ * Posición de una nota en la grilla final. Si la grilla no entra en el tablero,
+ * se achica entera ("scale") para que nunca quede cortada.
+ */
 function gridPosition(index, total, board, noteHeight) {
-  const columns = board.width < 600 ? 2 : board.width < 900 ? 3 : 4;
-  const width = Math.min(MAX_NOTE_WIDTH, (board.width - (columns - 1) * GRID_GAP) / columns);
+  const { columns, width } = gridColumns(board.width);
   const rows = Math.ceil(total / columns);
-  const rowHeight = noteHeight + 62;
-  const top = Math.max(0, (board.height - rows * rowHeight) / 2);
+  const gridHeight = rows * noteHeight + (rows - 1) * GRID_GAP;
+  const scale = Math.min(1, board.height / gridHeight);
 
   const column = index % columns;
   const row = Math.floor(index / columns);
@@ -84,9 +112,10 @@ function gridPosition(index, total, board, noteHeight) {
   const rowWidth = itemsInRow * width + (itemsInRow - 1) * GRID_GAP;
 
   return {
-    x: (board.width - rowWidth) / 2 + column * (width + GRID_GAP),
-    y: top + row * rowHeight,
+    x: (board.width - rowWidth * scale) / 2 + column * (width + GRID_GAP) * scale,
+    y: (board.height - gridHeight * scale) / 2 + row * (noteHeight + GRID_GAP) * scale,
     width,
+    scale,
   };
 }
 
@@ -117,8 +146,19 @@ export function initValuePropositions() {
     $$(".vp__step").forEach((step) => step.classList.toggle("is-on", Number(step.dataset.vstep) === phase));
   };
 
+  let finalHeight = null;
+  let measuredWidth = 0;
+
   const layout = () => {
-    const board = { width: boardElement.clientWidth, height: boardElement.clientHeight };
+    const board = {
+      element: boardElement,
+      width: boardElement.clientWidth,
+      height: boardElement.clientHeight,
+    };
+    if (board.width !== measuredWidth) {
+      finalHeight = measureFinalHeight(board, survivors);
+      measuredWidth = board.width;
+    }
     const noteWidth = notes[0].element.offsetWidth;
     const noteHeight = notes[0].element.offsetHeight;
     const scrollable = Math.max(1, section.offsetHeight - window.innerHeight);
@@ -137,16 +177,18 @@ export function initValuePropositions() {
       let rotation = note.rotation;
       let opacity = appear;
       let width = "";
+      let gridScale = 1;
 
       if (note.survives) {
         const index = survivors.indexOf(note);
-        const target = gridPosition(index, survivors.length, board, noteHeight);
+        const target = gridPosition(index, survivors.length, board, finalHeight);
         const toGrid = easeOutCubic(clamp((progress - TIMING.gridStart) / TIMING.gridDuration));
         const isFinal = toGrid > 0.6;
 
         x = lerp(startX, target.x, toGrid);
         y = lerp(startY, target.y, toGrid);
         rotation = lerp(note.rotation, 0, toGrid);
+        gridScale = lerp(1, target.scale, toGrid);
         note.element.classList.toggle("is-final", isFinal);
         note.text.textContent = isFinal ? valuePropositionFor(note.idea.persona) : note.idea.text;
         note.element.style.zIndex = toGrid > 0 ? 50 + index : "";
@@ -160,7 +202,7 @@ export function initValuePropositions() {
         opacity = appear * (1 - fall * 0.9);
       }
 
-      const scale = lerp(0.8, 1, appear);
+      const scale = lerp(0.8, 1, appear) * gridScale;
       note.element.style.width = width;
       note.element.style.opacity = opacity.toFixed(3);
       note.element.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) rotate(${rotation.toFixed(2)}deg) scale(${scale.toFixed(3)})`;

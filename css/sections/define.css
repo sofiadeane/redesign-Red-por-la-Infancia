@@ -210,7 +210,7 @@
     0 10px 22px rgba(27, 27, 31, 0.1);
   opacity: 0;
   will-change: transform, opacity;
-  transform-origin: 50% 0;
+  transform-origin: 0 0;
 }
 .sticky::before {
   content: "";
@@ -315,5 +315,35 @@
   .vp__sticky {
     position: relative;
     height: auto;
+  }
+}
+
+/* En celular, la grilla final es una lista de notas compactas (avatar + texto) */
+@media (max-width: 760px) {
+  .vp__steps {
+    display: none;
+  }
+  .vp__caption {
+    min-height: 0;
+  }
+  .sticky.is-final {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 0;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  .sticky.is-final .sticky__who {
+    order: -1;
+    flex: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 0;
+  }
+  .sticky.is-final .sticky__who img {
+    width: 30px;
+    height: 30px;
   }
 }
