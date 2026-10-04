@@ -1,0 +1,37 @@
+/* Design tokens: colores, tipografías, radios y sombras. */
+
+:root {
+  --ink: #1b1b1f;
+  --ink-2: #55555f;
+  --ink-3: #8a8a94;
+  --line: #e7e5ea;
+  --bg: #fbfaf8;
+  --surface: #ffffff;
+  --soft: #f4f2f7;
+
+  --purple: #8b6cf6;
+  --lilac: #e9e2ff;
+  --pink: #ff7eb6;
+  --rose: #ffe3ef;
+  --lime: #c8ef5a;
+  --lime-soft: #f1fbd5;
+  --orange: #ff9a4d;
+  --peach: #ffe9d6;
+  --yellow: #ffd35c;
+  --butter: #fff4cc;
+  --blue: #4f6bff;
+  --sky: #e3e8ff;
+  --mint: #7fdcb6;
+  --mint-soft: #ddf6ea;
+  --teal: #2a9d9a;
+
+  --r: 22px;
+  --r-sm: 14px;
+  --shadow: 0 1px 2px rgba(27, 27, 31, 0.04), 0 8px 24px rgba(27, 27, 31, 0.06);
+  --shadow-lg: 0 2px 4px rgba(27, 27, 31, 0.04), 0 18px 48px rgba(27, 27, 31, 0.1);
+
+  --f-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --f-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --grad: linear-gradient(90deg, #ff7eb6, #ff9a4d 45%, #8b6cf6);
+}

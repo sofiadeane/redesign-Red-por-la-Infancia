@@ -1,0 +1,52 @@
+/* Próximas etapas. */
+
+.next {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.next__card {
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--c) 28%, white), #fff 75%);
+}
+.next__n {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: 34px;
+  line-height: 1;
+  color: var(--ink-3);
+}
+.next__card h3 {
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: 30px;
+  margin: 8px 0 8px;
+}
+.next__card p {
+  margin: 0 0 18px;
+  color: var(--ink-2);
+  font-size: 15px;
+}
+.lock {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--ink-2);
+  font-weight: 500;
+  font-size: 12.5px;
+}
+
+@media (max-width: 1024px) {
+  .next {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .next {
+    grid-template-columns: 1fr;
+  }
+}
