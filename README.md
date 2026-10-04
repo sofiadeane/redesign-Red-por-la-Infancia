@@ -46,3 +46,8 @@ Settings → Pages → Source: *Deploy from a branch* → Branch: `main` / `(roo
 ---
 
 Diseño y research: Sofía Deane · 2026. Las capturas del sitio público redporlainfancia.org se usan con fines de análisis.
+# Redesign-Red-por-la-Infancia
+Un repositorio que documenta el proceso de rediseño de la plataforma de Fundación Red por la Infancia
+
+## Link para ver el proceso de rediseño
+https://sofiadeane.github.io/redesign-Red-por-la-Infancia/
