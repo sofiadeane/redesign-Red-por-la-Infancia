@@ -7,6 +7,7 @@ import { initAudit } from "./modules/audit.js";
 import { initPainPoints } from "./modules/pain-points.js";
 import { initAnalytics } from "./modules/analytics.js";
 import { initPersonas } from "./modules/personas.js";
+import { initEmpathy } from "./modules/empathy.js";
 import { initStories } from "./modules/stories.js";
 import { initJourneys } from "./modules/journeys.js";
 import { initDefine } from "./modules/define.js";
@@ -21,7 +22,8 @@ initAudit();
 initPainPoints();
 initAnalytics();
 const showJourney = initJourneys();
-initPersonas({ onShowJourney: showJourney });
+const showEmpathy = initEmpathy();
+initPersonas({ onShowJourney: showJourney, onShowEmpathy: showEmpathy });
 initStories();
 
 // 02 · Define

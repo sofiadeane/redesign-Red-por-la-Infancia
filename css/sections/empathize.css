@@ -561,6 +561,24 @@
   background: var(--soft);
   color: var(--ink-2);
 }
+.persona__block {
+  display: grid;
+  gap: 8px;
+}
+.persona__label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-3);
+}
+.persona__channels span {
+  font-size: 12px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--ink-2);
+}
 .persona__more {
   margin-top: auto;
   font-weight: 500;
@@ -1003,5 +1021,210 @@
 @media (max-width: 760px) {
   .chart__split {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Mapas de empatía */
+.emap {
+  padding: 0;
+  overflow: hidden;
+}
+.emap__head {
+  padding: 26px 28px;
+  background: linear-gradient(110deg, color-mix(in srgb, var(--c) 30%, white), #fff 70%);
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+}
+.emap__head img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #fff;
+  flex-shrink: 0;
+}
+.emap__head h3 {
+  margin: 0;
+  font-family: var(--f-display);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.05;
+}
+.emap__head h3 span::before {
+  content: "· ";
+}
+.emap__head h3 span {
+  font-family: var(--f-body);
+  font-size: 15px;
+  color: var(--ink-2);
+}
+.emap__head p {
+  margin: 6px 0 0;
+  color: var(--ink-2);
+  font-size: 15px;
+}
+.emap__canvas {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.emap__q,
+.emap__pg {
+  padding: 26px 28px 28px;
+}
+.emap__q--says {
+  border-right: 1px dashed var(--line);
+  border-bottom: 1px dashed var(--line);
+  padding-right: 72px;
+}
+.emap__q--thinks {
+  border-bottom: 1px dashed var(--line);
+  padding-left: 72px;
+}
+.emap__q--does {
+  border-right: 1px dashed var(--line);
+  padding-right: 72px;
+  padding-top: 40px;
+}
+.emap__q--feels {
+  padding-left: 72px;
+  padding-top: 40px;
+}
+.emap__label {
+  display: inline-block;
+  margin: 0;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: color-mix(in srgb, var(--c) 35%, white);
+}
+.emap__hint {
+  margin: 8px 0 12px;
+  color: var(--ink-3);
+  font-size: 13px;
+}
+.emap ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+.emap li {
+  padding: 10px 14px;
+  border-radius: var(--r-sm);
+  background: color-mix(in srgb, var(--c) 9%, white);
+  border-left: 3px solid color-mix(in srgb, var(--c) 60%, white);
+  font-size: 14.5px;
+  line-height: 1.4;
+}
+.emap__q--says li {
+  font-style: italic;
+}
+.emap__center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow:
+    0 0 0 8px var(--c),
+    var(--shadow);
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 2px;
+  text-align: center;
+}
+.emap__center img {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+}
+.emap__center span {
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.emap__bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--line);
+}
+.emap__pg--pains {
+  background: var(--soft);
+  border-right: 1px solid var(--line);
+}
+.emap__pg--gains {
+  background: color-mix(in srgb, var(--c) 16%, white);
+}
+.emap__pg .emap__label::before {
+  margin-right: 6px;
+}
+.emap__pg--pains .emap__label {
+  background: var(--ink);
+  color: #fff;
+}
+.emap__pg--pains .emap__label::before {
+  content: "−";
+}
+.emap__pg--gains .emap__label {
+  background: var(--c);
+}
+.emap__pg--gains .emap__label::before {
+  content: "+";
+}
+.emap__pg li {
+  background: #fff;
+  border: 1px solid var(--line);
+}
+.emap__pg--gains li {
+  border-left: 3px solid var(--c);
+}
+.emap__pg--pains li {
+  border-left: 3px solid var(--ink-3);
+}
+
+@media (max-width: 760px) {
+  .emap__head {
+    padding: 20px;
+  }
+  .emap__head h3 span {
+    display: block;
+    margin-top: 4px;
+  }
+  .emap__head h3 span::before {
+    content: none;
+  }
+  .emap__canvas,
+  .emap__bottom {
+    grid-template-columns: 1fr;
+  }
+  .emap__center {
+    display: none;
+  }
+  .emap__q,
+  .emap__q--says,
+  .emap__q--thinks,
+  .emap__q--does,
+  .emap__q--feels,
+  .emap__pg {
+    padding: 22px 20px;
+    border-right: none;
+    border-bottom: 1px dashed var(--line);
+  }
+  .emap__q--feels {
+    border-bottom: none;
+  }
+  .emap__pg--pains {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
   }
 }

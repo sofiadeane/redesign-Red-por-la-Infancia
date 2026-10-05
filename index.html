@@ -259,6 +259,7 @@
             <li>Auditoría heurística</li>
             <li>Google Analytics</li>
             <li>Proto-personas</li>
+            <li>Mapas de empatía</li>
             <li>Historias de usuario</li>
             <li>Mapas de recorrido</li>
           </ul>
@@ -593,7 +594,27 @@
         </div>
       </section>
 
-      <!-- 1.4 USER STORIES -->
+      <!-- 1.4 EMPATHY MAPS -->
+      <section class="section" id="empatia">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Mapas de empatía</p>
+              <h2 class="h2">
+                Qué dice, piensa, <br class="hide-sm" /><mark class="hl hl--mint">hace y siente</mark>.
+              </h2>
+            </div>
+            <p class="section-head__aside">
+              Un mapa por persona para ponerse en su lugar en el momento en que llega al sitio, con los
+              dolores que hoy la frenan y lo que espera ganar.
+            </p>
+          </div>
+          <div class="tabs" role="tablist" aria-label="Elegir persona" id="empathyTabs"></div>
+          <div class="emap card" id="empathyMap" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- 1.5 USER STORIES -->
       <section class="section section--grad-c" id="historias">
         <div class="wrap">
           <div class="section-head">
@@ -622,7 +643,7 @@
         </div>
       </section>
 
-      <!-- 1.5 JOURNEY MAPS -->
+      <!-- 1.6 JOURNEY MAPS -->
       <section class="section" id="journeys">
         <div class="wrap">
           <div class="section-head">
@@ -640,7 +661,7 @@
         </div>
       </section>
 
-      <!-- 1.6 INSIGHTS -->
+      <!-- 1.7 INSIGHTS -->
       <section class="section section--ink" id="insights">
         <div class="wrap">
           <p class="eyebrow eyebrow--lime">Aprendizajes</p>
@@ -841,7 +862,7 @@
     </footer>
 
     <!-- MODALS -->
-    <dialog class="modal" id="personaModal" aria-labelledby="pmTitle">
+    <dialog class="modal modal--persona" id="personaModal" aria-labelledby="pmTitle">
       <div class="modal__inner" id="personaModalBody"></div>
     </dialog>
     <dialog class="modal modal--img" id="imgModal" aria-label="Captura ampliada">

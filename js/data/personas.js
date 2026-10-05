@@ -1,7 +1,17 @@
 /**
  * Proto-personas de la etapa Empathize.
  * Fuente: Notion del proyecto (1.1 - Personas).
+ *
+ * motivations: qué la mueve al usar el sitio (0 a 100).
+ * personality: posición en cada eje de PERSONALITY_AXES (0 = extremo izquierdo, 100 = derecho).
  */
+
+export const PERSONALITY_AXES = [
+  ["Calma", "Urgencia"],
+  ["Confía", "Desconfía"],
+  ["Explora", "Va directo"],
+  ["Poco digital", "Muy digital"],
+];
 
 export const personas = [
   {
@@ -14,10 +24,21 @@ export const personas = [
     age: "38 años",
     location: "Conurbano bonaerense",
     job: "Empleada administrativa",
+    family: "En pareja, dos hijos (6 y 10 años); cuida a su sobrina algunas tardes",
     device: "Celular Android de gama media, datos móviles",
     arrives: 'Busca en Google "dónde denunciar abuso infantil" o ve una publicación en Instagram',
     context:
       "Su sobrina de 9 años le contó algo que la alarmó. Está angustiada, no sabe si es una emergencia ni qué pasos seguir. Busca de noche, cuando los chicos duermen.",
+    bio: "Trabaja en una oficina administrativa y usa el celular para todo, pero nunca tuvo que buscar información tan sensible. Cuando algo la preocupa necesita una respuesta concreta y alguien que le diga qué hacer, sin vueltas.",
+    motivations: [
+      { label: "Rapidez", value: 95 },
+      { label: "Claridad", value: 90 },
+      { label: "Contención", value: 80 },
+      { label: "Saber qué hacer después", value: 75 },
+      { label: "Confidencialidad", value: 60 },
+    ],
+    personality: [90, 50, 85, 40],
+    channels: ["Google", "WhatsApp", "Instagram", "Llamadas"],
     goals: [
       "Encontrar rápido un teléfono o lugar donde pedir ayuda",
       "Entender si su caso es una urgencia",
@@ -44,10 +65,21 @@ export const personas = [
     age: "34 años",
     location: "Rosario",
     job: "Comerciante, madre de dos (7 y 12 años)",
+    family: "Casada, dos hijos (7 y 12 años)",
     device: "Celular Android de gama media; casi nunca usa computadora",
     arrives: "Ve una campaña en redes sociales o un video compartido en el grupo de WhatsApp de la escuela",
     context:
       "Su hijo mayor acaba de recibir su primer celular. Le preocupan las redes, el grooming y no sabe cómo hablar de estos temas sin asustarlo.",
+    bio: "Tiene un local de ropa en el centro de Rosario y se informa en los ratos libres, siempre desde el celular. Es muy activa en el grupo de WhatsApp de la escuela y comparte lo que le sirve. Siente que la tecnología avanza más rápido que ella.",
+    motivations: [
+      { label: "Proteger a sus hijos", value: 95 },
+      { label: "Consejos prácticos", value: 85 },
+      { label: "Formatos cortos", value: 80 },
+      { label: "Contenido visual", value: 75 },
+      { label: "Compartir con otras familias", value: 70 },
+    ],
+    personality: [45, 30, 35, 45],
+    channels: ["WhatsApp", "Facebook", "Instagram", "YouTube"],
     goals: [
       "Aprender a detectar señales de alerta",
       "Obtener consejos prácticos y cortos para hablar con sus hijos",
@@ -74,10 +106,21 @@ export const personas = [
     age: "45 años",
     location: "Córdoba",
     job: "Docente de secundaria y referente de ESI en su escuela",
+    family: "En pareja, un hijo de 16 años",
     device: "Principalmente celular (consulta guías entre clases); notebook para preparar talleres",
     arrives: "Recomendación de un colega, búsqueda en Google, links de UNICEF",
     context:
       "Detectó señales de grooming en un alumno y además quiere preparar un taller sobre violencia digital. Busca protocolos, guías y recursos descargables que pueda citar y compartir.",
+    bio: "Hace 18 años que da clases de Historia y es el referente de ESI de su escuela. Prepara talleres para alumnos y colegas, y suele ser a quien consultan cuando aparece una situación difícil. Valora la información respaldada por instituciones.",
+    motivations: [
+      { label: "Material confiable", value: 95 },
+      { label: "Recursos actualizados", value: 85 },
+      { label: "Descargables para clase", value: 80 },
+      { label: "Protocolos por provincia", value: 75 },
+      { label: "Fuentes para citar", value: 70 },
+    ],
+    personality: [60, 65, 70, 70],
+    channels: ["Google", "WhatsApp docente", "Email", "Google Drive"],
     goals: [
       "Encontrar guías y protocolos actualizados según su provincia",
       "Descargar materiales para usar en clase (ReConectate)",
@@ -104,11 +147,22 @@ export const personas = [
     age: "15 años",
     location: "Mendoza",
     job: "Estudiante de secundaria",
+    family: "Vive con su mamá, su papá y un hermano menor",
     device: "Solo celular",
     arrives:
       'TikTok o Instagram, una charla en la escuela, o buscando "cómo borrar una foto mía de internet"',
     context:
       "Una foto íntima suya está circulando entre compañeros. Tiene miedo y vergüenza, y busca una solución por su cuenta antes de pedir ayuda a un adulto.",
+    bio: "Está en 4º año del secundario, pasa gran parte del día en redes y resuelve todo desde el celular. Ante un problema, primero busca en TikTok o Google antes de hablar con un adulto. Le importa mucho lo que piensan sus compañeros.",
+    motivations: [
+      { label: "Confidencialidad", value: 100 },
+      { label: "Rapidez", value: 90 },
+      { label: "No ser juzgada", value: 90 },
+      { label: "Lenguaje cercano", value: 80 },
+      { label: "Resolverlo sola", value: 70 },
+    ],
+    personality: [85, 70, 60, 95],
+    channels: ["TikTok", "Instagram", "WhatsApp", "Google"],
     goals: [
       "Hacer que se borre el contenido lo antes posible",
       "Entender sus derechos y que no es su culpa",
@@ -134,10 +188,21 @@ export const personas = [
     age: "52 años",
     location: "CABA",
     job: "Gerente en una empresa; evalúa donaciones personales y de RSE",
+    family: "Casado, dos hijas (19 y 22 años)",
     device: "Celular para descubrir, computadora para donar",
     arrives: "Nota en un medio, LinkedIn, recomendación de un conocido",
     context:
       "Quiere donar mensualmente y está evaluando si su empresa puede apoyar un programa. Compara varias ONGs antes de decidir.",
+    bio: "Es gerente comercial en una empresa de servicios, con más de 20 años de carrera. Dona todos los meses a dos causas y participa del comité de RSE de su empresa. Antes de comprometerse, compara opciones y pide números.",
+    motivations: [
+      { label: "Transparencia", value: 95 },
+      { label: "Impacto medible", value: 90 },
+      { label: "Reputación de la ONG", value: 85 },
+      { label: "Donación simple", value: 80 },
+      { label: "Alianzas corporativas", value: 70 },
+    ],
+    personality: [20, 75, 60, 70],
+    channels: ["LinkedIn", "Medios digitales", "Email", "Google"],
     goals: [
       "Entender qué hace la organización y qué impacto tiene",
       "Donar de forma rápida y segura",
@@ -164,10 +229,21 @@ export const personas = [
     age: "47 años",
     location: "CABA",
     job: "Asesora legislativa e investigadora universitaria",
+    family: "Divorciada, un hijo de 14 años",
     device: "Computadora de escritorio",
     arrives: "Referencias en informes de INSPIRE / UNICEF, búsqueda académica, contacto institucional",
     context:
       "Está redactando un proyecto de ley sobre acceso a la justicia para víctimas y busca encuestas, datos y antecedentes legislativos que pueda citar.",
+    bio: "Investiga derecho de familia en la universidad y asesora a una comisión legislativa. Lee informes completos, revisa la metodología y necesita fuentes que resistan el escrutinio. Conoce a la fundación por su trabajo en INSPIRE.",
+    motivations: [
+      { label: "Evidencia rigurosa", value: 100 },
+      { label: "Metodología clara", value: 90 },
+      { label: "Formato citable", value: 85 },
+      { label: "Datos actualizados", value: 80 },
+      { label: "Contacto institucional", value: 70 },
+    ],
+    personality: [40, 70, 35, 75],
+    channels: ["Google Académico", "Email", "LinkedIn", "Sitios institucionales"],
     goals: [
       "Encontrar investigaciones y datos con metodología clara",
       "Citar y descargar informes",
@@ -193,11 +269,22 @@ export const personas = [
     age: "39 años",
     location: "Manila, Filipinas",
     job: "Oficial de programas en una red regional de protección infantil",
+    family: "Vive con su pareja en Manila",
     device: "Celular durante la conferencia; notebook para el seguimiento",
     arrives:
       "Escanea el QR de una presentación de Red por la Infancia en la Conferencia Mundial de Manila (noviembre 2026)",
     context:
       "En la conferencia de Manila de noviembre escucha a Red por la Infancia en un panel sobre INSPIRE y quiere evaluar una alianza. No habla español: necesita entender rápido quiénes son, qué hacen, con qué evidencia y a quién escribir, antes de recomendarlos a su organización.",
+    bio: "Coordina programas de protección infantil en una red que trabaja en varios países del sudeste asiático. Viaja a conferencias para identificar organizaciones aliadas y después arma recomendaciones para su equipo. Habla inglés y tagalo; no lee español.",
+    motivations: [
+      { label: "Contenido en inglés", value: 100 },
+      { label: "Entender rápido", value: 90 },
+      { label: "Contacto para alianzas", value: 85 },
+      { label: "Evidencia", value: 80 },
+      { label: "Materiales para compartir", value: 75 },
+    ],
+    personality: [65, 45, 65, 85],
+    channels: ["LinkedIn", "Email", "WhatsApp", "Traductor del navegador"],
     goals: [
       "Leer el sitio en inglés (o en su idioma)",
       "Entender en pocos minutos la misión, los programas y el impacto",
