@@ -15,8 +15,8 @@ import {
 } from "../data/ideate.js";
 
 const TYPE_LABELS = { direct: "Directo", indirect: "Indirecto" };
-const VALUE_LABELS = { yes: "Sí", partial: "Parcial", no: "No" };
-const TOTAL_COMPETITORS = 5;
+const VALUE_LABELS = { yes: "Sí", partial: "Parcial", no: "No", unknown: "No verificable" };
+const TOTAL_COMPETITORS = competitors.length;
 
 /* ---------- Goal statement ---------- */
 
@@ -65,7 +65,7 @@ function initGoal() {
 function competitorTemplate(item, index) {
   return `
     <article class="rival card" data-type="${item.type}" style="animation-delay:${index * 50}ms">
-      <img class="rival__shot" src="assets/img/competitors/${item.id}.webp" alt="Home de ${escapeHtml(item.name)} en el celular" loading="lazy">
+      <img class="rival__shot" src="assets/img/competitors/${item.id}.webp" alt="${escapeHtml(item.shot ?? `Home de ${item.name} en el celular`)}" loading="lazy">
       <div class="rival__body">
         <div class="rival__top">
           <h3>${escapeHtml(item.name)}</h3>
@@ -83,7 +83,9 @@ function initCompetitors() {
   $("#auditGoal").textContent = auditGoal;
 
   const render = (filter) => {
-    const visible = competitors.filter((item) => filter === "all" || item.type === filter);
+    const visible = competitors.filter(
+      (item) => filter === "all" || item.type === filter || item.region === filter,
+    );
     grid.innerHTML = visible.map(competitorTemplate).join("");
     setActive(buttons, (button) => button.dataset.rfilter === filter);
   };
@@ -120,6 +122,7 @@ function initMatrix() {
     )
     .join("");
 
+  table.style.setProperty("--cols", matrixOrgs.length);
   table.innerHTML = `<div class="mx__head">${header}</div>${rows}`;
 
   const select = (index) => {

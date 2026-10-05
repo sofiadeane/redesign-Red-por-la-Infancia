@@ -10,9 +10,11 @@ Markdowns listos para copiar en Notion. Cada archivo es una página; el número 
 | `03-ideate/3.2-goal-statements.md` | 3 - Ideate Stage › 3.2 - Goal statements | Ya está en Notion (arriba de los goal statements v1) |
 | `03-ideate/3.3-competitive-audit.md` | 3 - Ideate Stage › 3.3 - Competitive audit | Ya está en Notion |
 | `03-ideate/3.3.1` a `3.3.5` | Subpáginas de 3.3 (una por competidor) | Ya están en Notion, con su hoja de capturas |
-| `03-ideate/3.3.6-analisis-comparativo.md` | Subpágina de 3.3 | Ya está en Notion |
-| `03-ideate/3.3.7-competitive-audit-report.md` | Subpágina de 3.3 | **Pendiente**: la página existe con el título puesto, falta pegar el contenido |
-| `03-ideate/3.4-design-implications.md` | 3 - Ideate Stage › "Nueva página" (sin título) | **Pendiente**: renombrar a "3.4 - Design Implications" y pegar el contenido |
+| `03-ideate/3.3.8` a `3.3.20` | Subpáginas de 3.3 (13 competidores nuevos, uno por página) | **Pendiente**: crear las subpáginas y pegar el contenido, con su hoja de capturas |
+| `03-ideate/3.3-competitive-audit.md` (actualizado) | 3 - Ideate Stage › 3.3 - Competitive audit | **Pendiente**: reemplazar las tablas de Competidores y las dos matrices (ahora con 18 organizaciones) |
+| `03-ideate/3.3.6-analisis-comparativo.md` | Subpágina de 3.3 | **Pendiente**: reemplazar por la versión actualizada con los 18 competidores |
+| `03-ideate/3.3.7-competitive-audit-report.md` | Subpágina de 3.3 | **Pendiente**: la página existe con el título puesto, falta pegar el contenido (versión actualizada con 18 competidores) |
+| `03-ideate/3.4-design-implications.md` | 3 - Ideate Stage › 3.4 - Design Implications | **Pendiente**: reemplazar por la versión actualizada (20 filas) |
 | `04-portfolio/0-diagnostico.md` | Nueva sección "4 - Portfolio" (o donde prefieras) | Nuevo, para revisar |
 | `04-portfolio/1-sitemaps.md` | Subpágina de 4 | Nuevo, para revisar |
 | `04-portfolio/2-estructura-dos-paginas.md` | Subpágina de 4 | Nuevo, para revisar |
