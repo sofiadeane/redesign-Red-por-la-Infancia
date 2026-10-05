@@ -345,7 +345,7 @@ export const personas = [
       "No hay un resumen institucional ni un contacto para alianzas internacionales",
     ],
     needs:
-      "Selector de idioma visible, páginas clave traducidas por personas, un resumen institucional descargable en inglés y un contacto para alianzas.",
+      "Selector de idioma visible, páginas clave con la traducción revisada por una persona, un resumen institucional descargable en inglés y un contacto para alianzas.",
     pages: "¿Quiénes Somos?, INSPIRE, Conferencia Mundial Manila, Evidencia, Contacto",
     ga: "El 31% de los usuarios está fuera de Argentina e inglés es el 2º idioma del navegador. La página de la Conferencia Mundial de Manila tiene la interacción más alta del sitio (2,18 vistas por usuario y 58 s), e INSPIRE · Manila 2026 creció 54% en una semana.",
   },

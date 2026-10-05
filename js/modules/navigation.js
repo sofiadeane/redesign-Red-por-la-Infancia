@@ -7,7 +7,8 @@ const STAGE_SECTIONS = [
   { stage: "resumen", selector: "#resumen" },
   { stage: "empathize", selector: "#empathize" },
   { stage: "define", selector: "#define" },
-  { stage: "ideate", selector: "#proximamente" },
+  { stage: "ideate", selector: "#ideate" },
+  { stage: "prototype", selector: "#proximamente" },
 ];
 
 function updateProgress(bar) {

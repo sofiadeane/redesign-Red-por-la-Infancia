@@ -22,7 +22,7 @@ export const defineItems = [
     who: "una familiar angustiada que busca ayuda desde el celular, de noche y con apuro",
     need: "entender en segundos que la fundación no atiende casos y llegar con un toque a la línea oficial o al recurso que sí puede ayudarla",
     because:
-      'el botón "Necesito Ayuda" desaparece en la home mobile, el aviso de "no somos asistencia directa" no deriva a ningún lado, los teléfonos no se pueden tocar y solo el 4% de los usuarios llega a esa página',
+      "sabe que tiene que actuar rápido y está angustiada: nunca tuvo que buscar algo tan sensible y, si no encuentra en segundos a quién llamar, se va",
     painPoints: ["soporte", "proceso"],
     stories: "US-01, US-02, US-03",
     hypothesis: {
@@ -38,7 +38,7 @@ export const defineItems = [
     who: "una madre de dos que llega desde Instagram o WhatsApp, siempre desde su celular",
     need: "accesos directos al Campus, ReConectate y Pantasaurus, y consejos cortos según la edad de sus hijos",
     because:
-      "el contenido de las campañas está dentro de imágenes ilegibles en el celular y la home apila 9 campañas sin ordenarlas por público",
+      "siente que la tecnología avanza más rápido que ella y se informa en los ratos libres entre el local y la casa: si un consejo no es corto y claro, no lo lee ni lo comparte en el grupo de la escuela",
     painPoints: ["producto", "proceso"],
     stories: "US-05, US-06, US-07, US-27",
     hypothesis: {
@@ -54,7 +54,7 @@ export const defineItems = [
     who: "un docente y referente de ESI que consulta recursos entre clases desde el celular",
     need: "encontrar rápido el protocolo vigente para su provincia y descargarlo",
     because:
-      'no hay buscador, "Nuestro Trabajo" no lleva a ninguna página y las guías no muestran su fecha ni se descargan con facilidad (solo 23 descargas en un año)',
+      "es a quien sus colegas consultan cuando aparece una situación difícil y solo confía en información respaldada por instituciones: un material sin fecha o sin fuente lo deja expuesto ante su escuela",
     painPoints: ["proceso", "producto"],
     stories: "US-08, US-09, US-10",
     hypothesis: {
@@ -69,7 +69,7 @@ export const defineItems = [
     who: "un pediatra de un hospital público que detecta señales de alerta en la consulta",
     need: "una guía breve de detección y un protocolo de derivación según su provincia",
     because:
-      "las guías del sitio están pensadas para docentes y familias, no hay protocolos por provincia y no encuentra capacitaciones para equipos de salud",
+      "es uno de los pocos adultos fuera de la casa que ve a la niña, casi no recibió formación sobre violencias y tiene pocos minutos por consulta: si no sabe qué hacer en ese momento, la oportunidad se pierde",
     painPoints: ["producto", "proceso"],
     stories: "US-30",
     hypothesis: {
@@ -84,7 +84,7 @@ export const defineItems = [
     who: "una adolescente de 15 años que quiere que se borre una foto íntima suya sin que se enteren sus padres",
     need: "llegar directo a Bajalo Ya! y a ReConectate y sentir que está en un espacio confidencial y sin juicio",
     because:
-      "la herramienta está escondida entre otras campañas y el sitio le habla a adultos, aunque es la 3ª página más vista",
+      "tiene miedo y vergüenza, le importa mucho lo que piensan sus compañeros y antes de hablar con un adulto busca en TikTok o Google: si siente que la juzgan o que le hablan como a una nena, se va",
     painPoints: ["soporte", "proceso"],
     stories: "US-11, US-12, US-13, US-28",
     hypothesis: {
@@ -100,7 +100,7 @@ export const defineItems = [
     who: "un donante que evalúa financiar un programa desde su empresa y compara varias ONGs antes de decidir",
     need: "confiar en la organización y donar en pocos pasos",
     because:
-      'el botón "Quiero Colaborar" aparece cortado o desaparece, hay errores visuales y no encuentra datos de impacto ni notas en medios que respalden a la fundación',
+      "pone en juego su dinero y el de su empresa, y tiene que rendirle cuentas al comité de RSE: si no ve números de impacto, no puede justificar la donación",
     painPoints: ["financiero", "producto"],
     stories: "US-14, US-15, US-16, US-32",
     hypothesis: {
@@ -115,7 +115,7 @@ export const defineItems = [
     who: "una asesora legislativa e investigadora que busca evidencia para un proyecto de ley",
     need: "encontrar, entender y citar investigaciones ordenadas por tema y año",
     because:
-      "en la página Evidencia los títulos se superponen con el texto y no hay un repositorio con filtros ni fichas para citar",
+      "su trabajo tiene que resistir el escrutinio de una comisión legislativa: si no puede verificar la metodología ni citar la fuente, no puede usar el dato",
     painPoints: ["producto", "proceso"],
     stories: "US-17, US-18",
     hypothesis: {
@@ -131,7 +131,7 @@ export const defineItems = [
     who: "una aliada internacional que conoció a la fundación en una conferencia y no habla español",
     need: "leer el sitio en inglés y entender en pocos minutos qué hace la fundación, cómo trabaja y a quién contactar",
     because:
-      'el sitio solo está en español, el selector de idioma tapa contenido, "Nuestro Trabajo" no explica el trabajo y no hay un contacto para alianzas, aunque la página de la Conferencia Mundial de Manila es la de mayor interacción del sitio',
+      "no lee español y, después de cada conferencia, tiene que recomendarle aliados a su equipo: si no entiende el trabajo de la fundación en pocos minutos, queda fuera de su lista",
     painPoints: ["proceso", "financiero"],
     stories: "US-21, US-22, US-23, US-24, US-25",
     hypothesis: {
@@ -147,7 +147,7 @@ export const defineItems = [
     who: "una periodista que escribe contra reloj sobre un caso de violencia digital",
     need: "datos citables con fuente y fecha, y un contacto de prensa que responda rápido",
     because:
-      "no hay una sección de prensa ni un contacto para medios, y los datos están dispersos en PDFs sin fecha",
+      "trabaja contra reloj, con un cierre en pocas horas, y le preocupa contar estos casos con responsabilidad: si la fuente no responde rápido, la nota sale sin la voz de la fundación",
     painPoints: ["soporte", "producto"],
     stories: "US-31",
     hypothesis: {
@@ -162,7 +162,7 @@ export const defineItems = [
     who: "el equipo de comunicación, que mantiene el sitio día a día",
     need: "publicar campañas y recursos nuevos sin depender del equipo de IT, y registrar su impacto a medida que sucede",
     because:
-      "cada página se arma desde cero en Divi, no hay plantillas, no hay forma de medir si el sitio cumple su objetivo y no hay un registro de capacitaciones, talleres ni reconocimientos",
+      "es un equipo chico, sin perfil técnico, que reparte su tiempo entre campañas, capacitaciones y alianzas: cada tarea que depende de IT o que hay que duplicar por idioma queda postergada",
     painPoints: ["soporte", "proceso"],
     stories: "US-19, US-20, US-26, US-29, US-33",
     hypothesis: {

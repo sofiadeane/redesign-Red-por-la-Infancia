@@ -2,14 +2,14 @@
 
 Caso de estudio interactivo que documenta el rediseño del sitio de **Fundación Red por la Infancia** con design thinking.
 
-| Etapa | Estado |
-|---|---|
-| 00 · Resumen del proceso | ✅ |
-| 01 · Empathize | ✅ |
-| 02 · Define | ✅ |
-| 03 · Ideate | 🔒 Próximamente |
-| 04 · Prototype | 🔒 Próximamente |
-| 05 · Test | 🔒 Próximamente |
+| Etapa                    | Estado                                           |
+| ------------------------ | ------------------------------------------------ |
+| 00 · Resumen del proceso | ✅                                               |
+| 01 · Empathize           | ✅                                               |
+| 02 · Define              | ✅                                               |
+| 03 · Ideate              | 🟡 En curso (goal statement y competitive audit) |
+| 04 · Prototype           | 🔒 Próximamente                                  |
+| 05 · Test                | 🔒 Próximamente                                  |
 
 **Ver el sitio:** https://sofiadeane.github.io/redesign-Red-por-la-Infancia/
 
@@ -22,14 +22,15 @@ css/
   base.css                 Reset, tipografía y utilidades
   components.css           Tarjetas, chips, botones, tags y modales
   layout.css               Barra superior, secciones, encabezados de etapa y footer
-  sections/                Estilos de cada sección (hero, summary, empathize, define, upcoming)
+  sections/                Estilos de cada sección (hero, summary, empathize, define, ideate, upcoming)
 js/
   main.js                  Punto de entrada: inicializa cada módulo
   config.js                Colores de personas y rutas compartidas
   data/                    Contenido de la investigación (fuente: Notion)
   modules/                 Un módulo por funcionalidad (auditoría, personas, historias, etc.)
   utils/                   Helpers de DOM y de animación
-assets/img/                Ilustraciones de personas, capturas de la auditoría, favicon
+assets/img/                Ilustraciones de personas, capturas de la auditoría y de competidores, favicon
+docs/                      Documentación completa de cada etapa en Markdown, lista para pasar a Notion
 ```
 
 Convenciones:
@@ -54,7 +55,7 @@ python3 -m http.server 8000
 
 ## Publicar con GitHub Pages
 
-Settings → Pages → Source: *Deploy from a branch* → Branch: `main` / `(root)` → Save.
+Settings → Pages → Source: _Deploy from a branch_ → Branch: `main` / `(root)` → Save.
 
 ---
 

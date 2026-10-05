@@ -382,7 +382,10 @@ export const journeys = [
           "Usar la traducción del navegador",
         ],
         feelings: ["Frustrada", "Perdida"],
-        opportunities: ["Selector de idioma visible en el header", "Páginas traducidas por personas"],
+        opportunities: [
+          "Selector de idioma visible en el header",
+          "Traducción automática revisada por una persona",
+        ],
       },
       {
         action: "Entender qué hacen y cómo",

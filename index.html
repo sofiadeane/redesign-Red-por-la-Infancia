@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="css/sections/summary.css" />
     <link rel="stylesheet" href="css/sections/empathize.css" />
     <link rel="stylesheet" href="css/sections/define.css" />
+    <link rel="stylesheet" href="css/sections/ideate.css" />
     <link rel="stylesheet" href="css/sections/upcoming.css" />
   </head>
   <body>
@@ -58,9 +59,7 @@
         <a href="#resumen" class="stage-link is-active" data-stage="resumen">00 Resumen</a>
         <a href="#empathize" class="stage-link" data-stage="empathize">01 Empathize</a>
         <a href="#define" class="stage-link" data-stage="define">02 Define</a>
-        <a href="#proximamente" class="stage-link is-locked" data-stage="ideate" aria-disabled="true"
-          >03 Ideate</a
-        >
+        <a href="#ideate" class="stage-link" data-stage="ideate">03 Ideate</a>
         <a href="#proximamente" class="stage-link is-locked" data-stage="prototype" aria-disabled="true"
           >04 Prototype</a
         >
@@ -79,7 +78,7 @@
         <div class="wrap hero__inner">
           <div class="hero__tags">
             <span class="tag tag--lime">UX Case Study</span>
-            <span class="tag tag--white"><span class="dot dot--live"></span> En progreso · etapa 2 de 5</span>
+            <span class="tag tag--white"><span class="dot dot--live"></span> En progreso · etapa 3 de 5</span>
           </div>
           <h1 class="hero__title">Rediseño <em>Red por la Infancia</em></h1>
           <p class="hero__lead">
@@ -203,14 +202,16 @@
               </ul>
               <a class="tl__link" href="#define">Ver la etapa →</a>
             </li>
-            <li class="tl card" style="--c: var(--yellow)">
+            <li class="tl card tl--done" style="--c: var(--yellow)">
               <span class="tl__n">03</span>
               <h3>Ideate</h3>
-              <span class="tl__state">Próximamente</span>
+              <span class="tl__state">En curso</span>
               <ul>
-                <li>Crazy 8s y bocetos</li>
-                <li>Nueva arquitectura de información</li>
+                <li>Goal statement</li>
+                <li>Competitive audit de 5 organizaciones</li>
+                <li>Próximo: arquitectura de información y bocetos</li>
               </ul>
+              <a class="tl__link" href="#ideate">Ver la etapa →</a>
             </li>
             <li class="tl card" style="--c: var(--mint)">
               <span class="tl__n">04</span>
@@ -860,7 +861,8 @@
             </div>
             <p class="section-head__aside">
               Formato: [persona] es [características] <b>que necesita</b> [necesidad] <b>porque</b> [insight].
-              Cada uno se apoya en un dato de la investigación.
+              El insight explica por qué eso es un problema para esa persona, según su personalidad y su
+              contexto.
             </p>
           </div>
           <div class="central card">
@@ -925,29 +927,164 @@
             <p class="eyebrow">Propuesta de valor única · a validar</p>
             <p class="uvp__text" id="vpUnique"></p>
             <p class="uvp__note">
-              Próximo paso: benchmark de organizaciones similares (UNICEF Argentina, Aldeas Infantiles SOS,
-              Grooming Argentina, Línea 102) y lectura de comentarios de sus usuarios para confirmar que nadie
-              más cubre esta necesidad.
+              Se contrastó en el competitive audit de la etapa Ideate: ninguna de las organizaciones
+              argentinas auditadas deriva a líneas oficiales ni tiene una herramienta como Bajalo Ya!.
             </p>
           </div>
         </div>
       </section>
 
       <!-- NEXT STAGES -->
+      <!-- ===================================================== -->
+      <!-- ===== STAGE 03 · IDEATE ===== -->
+      <!-- ===================================================== -->
+      <section class="stage-hero stage-hero--ideate" id="ideate">
+        <div class="wrap">
+          <span class="stage-hero__num">03</span>
+          <div>
+            <p class="eyebrow">Etapa 3</p>
+            <h2 class="stage-hero__title">Ideate</h2>
+            <p class="stage-hero__lead">
+              Antes de bocetar, definir qué queremos lograr y mirar cómo resuelven lo mismo otras
+              organizaciones: qué copiar, qué evitar y qué espacio nadie está ocupando.
+            </p>
+          </div>
+          <ul class="chips chips--static" aria-label="Métodos usados">
+            <li>Goal statement</li>
+            <li>Competitive audit</li>
+            <li>Design implications</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 3.1 GOAL STATEMENT -->
+      <section class="section" id="goal">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Goal statement</p>
+              <h2 class="h2">Qué queremos <mark class="hl hl--lime">lograr</mark>.</h2>
+            </div>
+            <p class="section-head__aside">
+              Del problema al objetivo, con la plantilla del certificado de Google UX: producto, acción,
+              audiencia, impacto y cómo lo vamos a medir. Tocá cada parte para ver por qué está ahí.
+            </p>
+          </div>
+          <div class="gsflow">
+            <article class="gsflow__step card">
+              <span class="gsflow__label">El problema</span>
+              <p id="goalProblem"></p>
+            </article>
+            <span class="gsflow__arrow" aria-hidden="true">→</span>
+            <article class="gsflow__step gsflow__step--goal card">
+              <span class="gsflow__label">El objetivo</span>
+              <p class="gs" id="goalStatement"></p>
+              <div
+                class="filters filters--wrap gs__chips"
+                role="group"
+                aria-label="Partes del goal statement"
+                id="goalChips"
+              ></div>
+              <p class="gs__why" id="goalWhy" aria-live="polite"></p>
+            </article>
+            <span class="gsflow__arrow" aria-hidden="true">→</span>
+            <article class="gsflow__step card">
+              <span class="gsflow__label">Lo que buscamos</span>
+              <ul class="gsflow__list" id="goalAchieve"></ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3.2 COMPETITIVE AUDIT -->
+      <section class="section section--cream" id="competencia">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Competitive audit</p>
+              <h2 class="h2">¿Cómo lo resuelven <mark class="hl hl--purple">otros</mark>?</h2>
+            </div>
+            <p class="section-head__aside" id="auditGoal"></p>
+          </div>
+          <div class="filters" role="group" aria-label="Filtrar competidores">
+            <button class="chip is-on" data-rfilter="all">Todos</button>
+            <button class="chip" data-rfilter="direct">Directos</button>
+            <button class="chip" data-rfilter="indirect">Indirectos</button>
+          </div>
+          <div class="rivals" id="rivals"></div>
+        </div>
+      </section>
+
+      <!-- 3.3 COMPARACIÓN -->
+      <section class="section" id="comparacion">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Comparación</p>
+              <h2 class="h2">Lo que encontré, <mark class="hl hl--orange">lente por lente</mark>.</h2>
+            </div>
+            <p class="section-head__aside">
+              Cinco lentes, una por cada pregunta del audit, con Red por la Infancia como punto de partida.
+              Elegí una fila para ver la evidencia.
+            </p>
+          </div>
+          <div class="mx card">
+            <div class="mx__scroll" tabindex="0" aria-label="Matriz comparativa, desplazable horizontalmente">
+              <div class="mx__table" id="matrix"></div>
+            </div>
+            <div class="mx__legend" aria-hidden="true">
+              <span><i class="mx__dot mx__dot--yes"></i>Sí</span>
+              <span><i class="mx__dot mx__dot--partial"></i>Parcial</span>
+              <span><i class="mx__dot mx__dot--no"></i>No</span>
+            </div>
+            <p class="mx__evidence" id="matrixEvidence" aria-live="polite"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3.4 GAP -->
+      <section class="section section--ink" id="gap">
+        <div class="wrap gap">
+          <div>
+            <p class="eyebrow eyebrow--lime">El gap</p>
+            <h2 class="h2 h2--light">
+              Todos le hablan al donante. <br class="hide-sm" />Nadie ordena el sitio alrededor de quien
+              llega.
+            </h2>
+            <p class="gap__lead">
+              Cuántos de los cinco competidores resuelve cada cosa. Lo que el sector hace bien está arriba; lo
+              que queda vacío, abajo. Ese vacío es la posición que puede ocupar Red por la Infancia.
+            </p>
+          </div>
+          <ul class="gapbars" id="gapBars"></ul>
+        </div>
+      </section>
+
+      <!-- 3.5 DESIGN IMPLICATIONS -->
+      <section class="section section--grad-b" id="implicancias">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow eyebrow--dark">Design implications</p>
+              <h2 class="h2">Qué cambia <mark class="hl hl--pink">en el diseño</mark>.</h2>
+            </div>
+            <p class="section-head__aside">
+              Cada hallazgo se convierte en una decisión o una pregunta para la próxima etapa: bocetos,
+              arquitectura de información y prototipo.
+            </p>
+          </div>
+          <div class="impls" id="implications"></div>
+          <a class="btn btn--ghost impls__docs" id="ideateDocs" href="#" target="_blank" rel="noopener"
+            >Ver la investigación completa →</a
+          >
+        </div>
+      </section>
+
       <section class="section" id="proximamente">
         <div class="wrap">
           <p class="eyebrow">Lo que viene</p>
           <h2 class="h2">Próximas etapas.</h2>
           <div class="next">
-            <article class="next__card card" style="--c: var(--pink)">
-              <span class="next__n">03</span>
-              <h3>Ideate</h3>
-              <p>
-                Crazy 8s, nueva arquitectura de información y flujos para pedir ayuda y donar, a partir de las
-                propuestas de valor.
-              </p>
-              <span class="lock">Próximamente</span>
-            </article>
             <article class="next__card card" style="--c: var(--yellow)">
               <span class="next__n">04</span>
               <h3>Prototype</h3>

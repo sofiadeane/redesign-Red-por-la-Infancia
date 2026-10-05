@@ -247,7 +247,7 @@ export const stories = [
     text: "Como aliada internacional, quiero leer en inglés las páginas institucionales para entender qué hace la fundación y cómo trabaja.",
     criteria: [
       "¿Quiénes Somos?, Nuestro Trabajo, INSPIRE, conferencias, Evidencia y Contacto tienen versión en inglés",
-      "Las traducciones son revisadas por una persona, no automáticas",
+      "La traducción automática de estas páginas la revisa una persona antes de publicarse",
       "Cada página indica su idioma (hreflang) para que Google muestre la versión correcta",
     ],
     evidence:
@@ -290,9 +290,16 @@ export const stories = [
     id: "US-26",
     priority: "Debería",
     persona: "equipo",
-    text: "Como equipo, quiero cargar la traducción de cada página dentro de la misma plantilla para mantener el sitio en varios idiomas sin depender de IT.",
-    criteria: ["Cada plantilla tiene campos por idioma", "Se ve qué páginas no tienen traducción todavía"],
-    evidence: "hoy cada página se arma desde cero; duplicarlas por idioma multiplicaría el trabajo.",
+    text: "Como equipo, quiero cargar cada página una sola vez, en español, y que se traduzca automáticamente a los otros idiomas, para mantener el sitio en varios idiomas sin duplicar trabajo.",
+    criteria: [
+      "Al publicar una página en español, se traduce sola a los idiomas activos",
+      "Se puede corregir a mano una palabra o frase de la traducción, por ejemplo un término técnico",
+      "Las correcciones se guardan en un glosario y se aplican en todo el sitio",
+      "Se puede marcar qué no se traduce: nombres propios, de programas (Bajalo Ya!, ReConectate) y de organismos",
+      "Se ve qué páginas tienen la traducción sin revisar",
+    ],
+    evidence:
+      "el equipo no quiere duplicar cada página por idioma, y muchas palabras técnicas se traducen mal de forma automática.",
   },
   {
     id: "US-27",

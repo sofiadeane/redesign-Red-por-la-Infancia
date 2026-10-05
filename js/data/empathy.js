@@ -314,7 +314,7 @@ export const empathyMaps = [
       "Sin resumen institucional ni contacto para alianzas",
     ],
     gains: [
-      "Un selector de idioma visible y páginas clave traducidas por personas",
+      "Un selector de idioma visible y páginas clave con la traducción revisada por una persona",
       "Misión, programas e impacto en pocos minutos",
       "Un resumen institucional descargable en inglés",
       "Un contacto directo para alianzas internacionales",
