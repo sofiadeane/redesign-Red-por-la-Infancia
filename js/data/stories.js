@@ -33,13 +33,15 @@ export const stories = [
     id: "US-03",
     priority: "Debe",
     persona: "laura",
-    text: "Como persona que busca ayuda urgente, quiero entender en pocos segundos si mi situación es una emergencia y qué línea corresponde para actuar sin perder tiempo.",
+    text: "Como persona que busca ayuda urgente, quiero entender en pocos segundos que la fundación no brinda asistencia directa y a qué línea oficial o recurso recurrir para actuar sin perder tiempo.",
     criteria: [
+      "Un aviso breve y visible explica que la fundación no brinda asistencia directa y a dónde ir",
       'Hay una guía corta tipo "¿Qué está pasando?" con 3 o 4 opciones',
-      "Cada opción lleva directo a la línea o recurso adecuado",
+      "Cada opción lleva directo a la línea oficial adecuada o a Bajalo Ya!",
       "El texto está escrito en lenguaje claro y contenedor",
     ],
-    evidence: 'la aclaración "no somos una organización de asistencia directa" genera confusión.',
+    evidence:
+      "la directora ejecutiva confirmó que la fundación no tiene equipo ni infraestructura para asistir casos; hoy el aviso existe pero no deriva a ningún lado.",
   },
   {
     id: "US-04",
@@ -194,9 +196,13 @@ export const stories = [
     id: "US-18",
     priority: "Podría",
     persona: "ana",
-    text: "Como asesora legislativa, quiero un contacto específico para prensa e instituciones para pedir información o entrevistas.",
-    criteria: ["Hay un mail o formulario institucional separado del contacto general"],
-    evidence: "",
+    text: "Como asesora legislativa, quiero un contacto institucional para el ámbito académico y judicial/legislativo para pedir información o proponer un trabajo conjunto.",
+    criteria: [
+      "Hay un mail o formulario institucional separado del contacto general y del de prensa",
+      "Se ofrecen recursos pensados para academia y para el ámbito judicial/legislativo",
+    ],
+    evidence:
+      "la fundación quiere ofrecer recursos distintos a prensa, academia y ámbito judicial/legislativo.",
   },
   {
     id: "US-19",
@@ -287,5 +293,88 @@ export const stories = [
     text: "Como equipo, quiero cargar la traducción de cada página dentro de la misma plantilla para mantener el sitio en varios idiomas sin depender de IT.",
     criteria: ["Cada plantilla tiene campos por idioma", "Se ve qué páginas no tienen traducción todavía"],
     evidence: "hoy cada página se arma desde cero; duplicarlas por idioma multiplicaría el trabajo.",
+  },
+  {
+    id: "US-27",
+    priority: "Debe",
+    persona: "silvia",
+    text: "Como madre, quiero accesos directos al Campus, a ReConectate y a Pantasaurus para formarme y encontrar material para mis hijos sin recorrer todo el sitio.",
+    criteria: [
+      "Los tres accesos están en la entrada para familias y en la home",
+      "El acceso al Campus tiene un lugar reservado hasta que se lance",
+    ],
+    evidence: "pedido de la directora ejecutiva; la home hoy apila 9 campañas sin orden.",
+  },
+  {
+    id: "US-28",
+    priority: "Debe",
+    persona: "camila",
+    text: "Como adolescente, quiero llegar a ReConectate y a Bajalo Ya! desde cualquier pantalla para encontrar ayuda y contenido pensado para mí.",
+    criteria: [
+      "Hay una entrada para adolescentes en la navegación principal",
+      "Bajalo Ya! y ReConectate (Adolescentes) están a 2 toques o menos",
+    ],
+    evidence: "pedido de la directora ejecutiva; Bajalo Ya! es la 3ª página más vista.",
+  },
+  {
+    id: "US-29",
+    priority: "Debe",
+    persona: "equipo",
+    text: "Como persona que visita el sitio, quiero una navegación organizada por tipo de público, como la de ReConectate, para encontrar rápido lo que es para mí.",
+    criteria: [
+      "El menú principal tiene una entrada por público",
+      "Cada entrada reúne recursos, campañas y contactos de ese público",
+      "La estructura se valida con card sorting antes de diseñar",
+    ],
+    evidence:
+      "a la propia directora ejecutiva le cuesta encontrar información en el sitio; la navegación de ReConectate por audiencia le resulta fácil.",
+  },
+  {
+    id: "US-30",
+    priority: "Debería",
+    persona: "javier",
+    text: "Como pediatra, quiero guías breves de detección y un protocolo de derivación por provincia para actuar bien desde la consulta.",
+    criteria: [
+      "Hay una entrada para profesionales de la salud",
+      "Cada guía se lee en menos de 3 minutos en el celular",
+      "El protocolo de derivación se filtra por provincia",
+    ],
+    evidence: "la directora ejecutiva pidió sumar a profesionales de la salud como público.",
+  },
+  {
+    id: "US-31",
+    priority: "Debería",
+    persona: "valeria",
+    text: "Como periodista, quiero una sala de prensa con contacto directo, voceros y datos clave con fuente para escribir una nota antes del cierre.",
+    criteria: [
+      "Hay una sección de prensa con mail y plazo de respuesta",
+      "Los datos clave muestran fuente y fecha",
+      "Se pueden descargar logos, fotos y una guía para informar sin revictimizar",
+    ],
+    evidence: "la fundación quiere tratar a prensa como un público aparte, con recursos propios.",
+  },
+  {
+    id: "US-32",
+    priority: "Debería",
+    persona: "diego",
+    text: "Como financiador, quiero ver las notas en medios y el impacto de la fundación a lo largo de los años para decidir si apoyo un programa.",
+    criteria: [
+      "Hay una sección para donantes, voluntarios y financiadores",
+      "Muestra impacto por año (capacitaciones, talleres, provincias, reconocimientos)",
+      "Lista las notas en medios con fecha y medio",
+    ],
+    evidence: "pedido de la directora ejecutiva; hoy no hay datos de impacto ni notas en medios en el sitio.",
+  },
+  {
+    id: "US-33",
+    priority: "Debería",
+    persona: "equipo",
+    text: "Como equipo, quiero registrar cada actividad (capacitaciones, talleres, seminarios, reconocimientos) en el momento para que alimente la sección de impacto sin trabajo extra.",
+    criteria: [
+      "Cargar una actividad lleva menos de 2 minutos desde el celular",
+      "Cada registro tiene tipo, fecha, lugar, público y cantidad de personas",
+      "Los números del sitio se actualizan a partir de esos registros",
+    ],
+    evidence: "la directora ejecutiva no sabe de dónde sacar los números de impacto ni cómo registrarlos.",
   },
 ];

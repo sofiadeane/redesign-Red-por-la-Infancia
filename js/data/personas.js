@@ -43,16 +43,17 @@ export const personas = [
       "Encontrar rápido un teléfono o lugar donde pedir ayuda",
       "Entender si su caso es una urgencia",
       "Saber qué hacer y qué no hacer con la niña",
+      "Entender a quién recurrir, ya que la fundación no atiende casos",
     ],
     frustrations: [
       'No ve el botón "Necesito Ayuda" en la home desde el celular',
       "Los números de teléfono no se pueden tocar para llamar",
-      'Se confunde al leer que Red por la Infancia "no es una organización de asistencia directa"',
+      'El aviso de que Red por la Infancia "no es una organización de asistencia directa" no le dice a dónde ir',
       "Mucho texto y scroll antes de encontrar lo importante",
     ],
     needs:
-      "Acceso a ayuda visible en todas las pantallas, teléfonos con un toque para llamar, lenguaje claro y contenedor, guía paso a paso.",
-    pages: "Necesito Ayuda, Cómo ayudar a una víctima, Bajalo Ya!",
+      "Un aviso claro de que la fundación no brinda asistencia directa, derivación inmediata a las líneas oficiales y a Bajalo Ya!, teléfonos con un toque para llamar, lenguaje claro y contenedor, guía paso a paso.",
+    pages: "Pedir ayuda (líneas oficiales), Cómo ayudar a una víctima, Bajalo Ya!",
     ga: "Google es la principal vía de entrada y Necesito Ayuda se visita más desde el celular (179 vs 126 vistas), pero solo el 4% de los usuarios llega a esa página.",
   },
   {
@@ -84,6 +85,7 @@ export const personas = [
       "Aprender a detectar señales de alerta",
       "Obtener consejos prácticos y cortos para hablar con sus hijos",
       "Compartir información útil con otras familias",
+      "Formarse en el Campus de la fundación",
     ],
     frustrations: [
       "Los títulos se cortan y el texto se superpone en pantallas chicas",
@@ -92,8 +94,9 @@ export const personas = [
       "El widget de idioma tapa contenido",
     ],
     needs:
-      "Contenido corto y visual por edad de los hijos, formatos fáciles de compartir, diseño mobile-first.",
-    pages: "Campañas, ReConectate (Madres, padres y familias), Guía para la detección",
+      "Accesos directos al Campus, ReConectate y Pantasaurus, contenido corto y visual por edad de los hijos, formatos fáciles de compartir, diseño mobile-first.",
+    pages:
+      "Campus (en desarrollo), ReConectate (Madres, padres y familias), Pantasaurus, Guía para la detección",
     ga: "Android es el sistema más usado en celulares (~2.000 usuarios vs 730 en iOS) e Instagram y Facebook traen unas 660 personas al año.",
   },
   {
@@ -138,6 +141,48 @@ export const personas = [
     ga: "Las Guías Orientativas se ven más desde el celular (252 vistas) que desde la computadora (198), y solo 23 personas descargaron un PDF en todo el año.",
   },
   {
+    id: "javier",
+    group: "UserC",
+    name: "Dr. Javier",
+    role: "Profesional de la salud",
+    quote: "Necesito saber cómo detectar y a dónde derivar desde la consulta",
+    primary: false,
+    age: "41 años",
+    location: "San Miguel de Tucumán",
+    job: "Pediatra en un hospital público y en un centro de atención primaria",
+    family: "Casado, una hija de 5 años",
+    device: "Celular entre consultas; computadora del hospital para leer guías completas",
+    arrives:
+      "Búsqueda en Google, recomendación de una trabajadora social del hospital, capacitaciones del ministerio de salud",
+    context:
+      "En una consulta de control, una nena de 6 años muestra señales que lo preocupan. Tiene 15 minutos por paciente y necesita saber qué preguntar, qué registrar en la historia clínica y a qué servicio derivar sin exponer a la niña.",
+    bio: "Trabaja hace 12 años en salud pública y ve muchas familias por día. Sabe que es una de las pocas personas adultas fuera de la casa que ve a la niña, pero en la facultad casi no recibió formación sobre violencias. Prefiere material breve, respaldado y que pueda consultar en el momento.",
+    motivations: [
+      { label: "Detectar a tiempo", value: 95 },
+      { label: "Protocolo de derivación", value: 90 },
+      { label: "Respaldo institucional", value: 85 },
+      { label: "Formación breve", value: 75 },
+      { label: "Material para familias", value: 60 },
+    ],
+    personality: [70, 55, 80, 60],
+    channels: ["Google", "WhatsApp del hospital", "Email", "Campus virtuales"],
+    goals: [
+      "Reconocer señales de alerta en la consulta",
+      "Saber qué registrar y a qué servicio derivar según su provincia",
+      "Formarse con capacitaciones breves y certificadas",
+    ],
+    frustrations: [
+      "Las guías están pensadas para docentes y familias, no para equipos de salud",
+      "No hay un protocolo de derivación claro por provincia",
+      "No encuentra capacitaciones para profesionales de la salud",
+      "No puede leer documentos largos entre consultas",
+    ],
+    needs:
+      "Un espacio para profesionales de la salud con guías breves de detección, protocolos de derivación por provincia, acceso al Campus y material para entregar a las familias.",
+    pages: "Guías Orientativas, Recursos Legales, Campus (en desarrollo)",
+    ga: "Hoy el sitio no tiene contenido para equipos de salud ni forma de medir si llegan; Guías Orientativas, su punto de entrada más probable, se ve más desde el celular (252 vs 198 vistas).",
+  },
+  {
     id: "camila",
     group: "UserD",
     name: "Camila",
@@ -174,7 +219,7 @@ export const personas = [
       "Mucho texto institucional antes de llegar a algo concreto",
     ],
     needs:
-      "Lenguaje cercano y sin juicio, acceso directo a Bajalo Ya!, mensajes de confidencialidad, experiencia 100% mobile.",
+      "Lenguaje cercano y sin juicio, acceso directo a Bajalo Ya! y ReConectate desde cualquier pantalla, mensajes de confidencialidad, experiencia 100% mobile.",
     pages: "Bajalo Ya!, ReConectate (Adolescentes), Necesito Ayuda",
     ga: "Bajalo Ya! es la 3ª página más vista del sitio (706 vistas en el año), mayormente desde el celular (426 vs 280).",
   },
@@ -182,7 +227,7 @@ export const personas = [
     id: "diego",
     group: "UserE",
     name: "Diego",
-    role: "Donante",
+    role: "Donante / financiador",
     quote: "Quiero ayudar, pero necesito confiar en a quién le doy",
     primary: false,
     age: "52 años",
@@ -192,7 +237,7 @@ export const personas = [
     device: "Celular para descubrir, computadora para donar",
     arrives: "Nota en un medio, LinkedIn, recomendación de un conocido",
     context:
-      "Quiere donar mensualmente y está evaluando si su empresa puede apoyar un programa. Compara varias ONGs antes de decidir.",
+      "Quiere donar mensualmente y está evaluando si su empresa puede financiar un programa. Compara varias ONGs antes de decidir y busca qué dicen los medios de cada una.",
     bio: "Es gerente comercial en una empresa de servicios, con más de 20 años de carrera. Dona todos los meses a dos causas y participa del comité de RSE de su empresa. Antes de comprometerse, compara opciones y pide números.",
     motivations: [
       { label: "Transparencia", value: 95 },
@@ -207,15 +252,17 @@ export const personas = [
       "Entender qué hace la organización y qué impacto tiene",
       "Donar de forma rápida y segura",
       "Conocer opciones para empresas o voluntariado",
+      "Ver qué dicen los medios de la fundación y qué logró a lo largo de los años",
     ],
     frustrations: [
       'El botón "Quiero Colaborar" aparece cortado o no aparece según el dispositivo',
       "El copyright desactualizado (2024) y los errores visuales le restan credibilidad",
       "No encuentra datos de impacto, informes anuales ni transparencia",
+      "No hay notas en medios ni reconocimientos que respalden a la fundación",
       "Los botones no son links reales (no puede abrirlos en otra pestaña)",
     ],
     needs:
-      "Diseño profesional y confiable, impacto en números, proceso de donación simple, info para alianzas corporativas.",
+      "Una sección para donantes y financiadores con impacto en números a lo largo de los años y notas en medios, diseño profesional y confiable, proceso de donación simple, info para alianzas corporativas.",
     pages: "Quiero Colaborar, ¿Quiénes Somos?, Donar Ahora",
     ga: "Quiero Colaborar se visita sobre todo desde la computadora (160 vs 79 vistas) y hoy no hay forma de medir cuántas personas terminan donando.",
   },
@@ -252,10 +299,10 @@ export const personas = [
     frustrations: [
       "En la página Evidencia los títulos se superponen con el texto",
       "No hay un repositorio ordenado de publicaciones por año o tema",
-      "No hay contacto específico para prensa o instituciones",
+      "No hay un contacto institucional para el ámbito académico y legislativo",
     ],
     needs:
-      "Repositorio de publicaciones con filtros y fichas descargables, formatos para citar, contacto institucional claro.",
+      "Repositorio de publicaciones con filtros y fichas descargables, formatos para citar, recursos pensados para el ámbito académico y judicial/legislativo, contacto institucional claro.",
     pages: "Evidencia, INSPIRE, WePROTECT, Recursos Legales",
     ga: "Evidencia se visita mayormente desde la computadora (186 vs 83 vistas), igual que INSPIRE y WePROTECT.",
   },
@@ -301,5 +348,46 @@ export const personas = [
       "Selector de idioma visible, páginas clave traducidas por personas, un resumen institucional descargable en inglés y un contacto para alianzas.",
     pages: "¿Quiénes Somos?, INSPIRE, Conferencia Mundial Manila, Evidencia, Contacto",
     ga: "El 31% de los usuarios está fuera de Argentina e inglés es el 2º idioma del navegador. La página de la Conferencia Mundial de Manila tiene la interacción más alta del sitio (2,18 vistas por usuario y 58 s), e INSPIRE · Manila 2026 creció 54% en una semana.",
+  },
+  {
+    id: "valeria",
+    group: "UserH",
+    name: "Valeria",
+    role: "Periodista",
+    quote: "Tengo un cierre en dos horas y necesito datos y una voz de la fundación",
+    primary: false,
+    age: "31 años",
+    location: "CABA",
+    job: "Periodista de sociedad en un medio digital nacional",
+    family: "Vive sola",
+    device: "Computadora en la redacción; celular para contactar fuentes",
+    arrives:
+      "Búsqueda en Google por un caso de actualidad, notas anteriores que citan a la fundación, redes sociales",
+    context:
+      "Un caso de grooming se volvió noticia nacional y su editora le pide una nota de contexto para hoy. Necesita cifras confiables, una entrevista con alguien de la fundación y recomendaciones para hablar del tema sin revictimizar.",
+    bio: "Cubre temas de sociedad y derechos desde hace seis años. Trabaja contra reloj y valora las fuentes que responden rápido y con datos claros. Le preocupa contar estos casos con responsabilidad.",
+    motivations: [
+      { label: "Datos citables", value: 95 },
+      { label: "Contacto rápido", value: 95 },
+      { label: "Voceros disponibles", value: 85 },
+      { label: "Guía para informar sin revictimizar", value: 75 },
+      { label: "Material gráfico", value: 60 },
+    ],
+    personality: [95, 50, 90, 85],
+    channels: ["Google", "X / Twitter", "WhatsApp", "Email"],
+    goals: [
+      "Conseguir cifras actualizadas y su fuente",
+      "Contactar rápido a una vocera o vocero de la fundación",
+      "Saber cómo informar sobre violencias sin revictimizar",
+    ],
+    frustrations: [
+      "No hay una sección de prensa ni un contacto para medios",
+      "Los datos están dispersos en PDFs y páginas sin fecha",
+      "No sabe a quién escribir ni cuánto van a tardar en responder",
+    ],
+    needs:
+      "Una sala de prensa con contacto directo, voceros, datos clave con fuente y fecha, notas anteriores, logos y fotos, y una guía para informar sin revictimizar.",
+    pages: "Prensa (nueva), Evidencia, ¿Quiénes Somos?, Contacto",
+    ga: "Hoy no se puede medir cuántos periodistas llegan al sitio: no hay sección de prensa ni contacto específico. Las notas en medios son una vía de entrada para donantes como Diego.",
   },
 ];

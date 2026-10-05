@@ -11,6 +11,8 @@ export const personaColors = {
   diego: "var(--orange)",
   ana: "var(--purple)",
   maya: "var(--teal)",
+  javier: "var(--red)",
+  valeria: "var(--blue)",
   equipo: "var(--team)", // gradiente de 3 colores (css/tokens.css)
 };
 

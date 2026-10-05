@@ -1,7 +1,7 @@
 /**
  * Mapas de empatía de la etapa Empathize: qué dice, piensa, hace y siente cada persona,
  * más sus dolores y lo que espera ganar. Se construyen a partir de las proto-personas,
- * los mapas de recorrido y los datos de Google Analytics.
+ * los mapas de recorrido, los datos de Google Analytics y la entrevista con la directora ejecutiva.
  */
 
 export const empathyMaps = [
@@ -17,12 +17,13 @@ export const empathyMaps = [
     thinks: [
       "¿Y si hago algo mal y empeoro las cosas para la nena?",
       "¿Le tengo que preguntar más o mejor no tocar el tema?",
-      "No sé si esta organización me puede ayudar o solo informa.",
+      "Si esta fundación no atiende casos, ¿a quién le pido ayuda?",
     ],
     does: [
       "Busca en Google “dónde denunciar abuso infantil”",
       "Abre el menú, baja hasta el footer buscando “Necesito Ayuda”",
       "Copia el número a mano porque no puede tocarlo para llamar",
+      "Lee que la fundación no brinda asistencia directa y no sabe a dónde seguir",
       "Lee las líneas en acordeones intentando decidir cuál le corresponde",
     ],
     feels: [
@@ -34,11 +35,12 @@ export const empathyMaps = [
     pains: [
       "El botón de ayuda no se ve en la home mobile",
       "Teléfonos que no se pueden tocar",
-      "“No somos asistencia directa” la desorienta",
+      "El aviso de “no somos asistencia directa” no la deriva a ningún lado",
       "Mucho scroll antes de lo importante",
     ],
     gains: [
-      "Un botón de ayuda visible en todas las pantallas",
+      "Un aviso claro de qué hace la fundación y a dónde ir",
+      "Derivación directa a las líneas oficiales y a Bajalo Ya!",
       "Llamar con un solo toque (911, 137, 102)",
       "Una guía corta: qué hacer y qué no hacer con la niña",
       "Un tono contenedor que le dé calma",
@@ -79,6 +81,7 @@ export const empathyMaps = [
     gains: [
       "Consejos cortos y visuales organizados por edad",
       "Formatos fáciles de compartir por WhatsApp",
+      "Accesos directos al Campus, ReConectate y Pantasaurus",
       "Una guía simple de señales de alerta",
       "Una experiencia pensada para el celular",
     ],
@@ -123,6 +126,45 @@ export const empathyMaps = [
     ],
   },
   {
+    persona: "javier",
+    scenario:
+      "En una consulta de control, una nena de 6 años muestra señales que lo preocupan. Tiene 15 minutos y otra familia esperando.",
+    says: [
+      "“Necesito saber cómo detectar y a dónde derivar desde la consulta.”",
+      "“¿Esto lo registro en la historia clínica o primero aviso a la trabajadora social?”",
+      "“¿Hay alguna capacitación para equipos de salud?”",
+    ],
+    thinks: [
+      "Soy uno de los pocos adultos fuera de la casa que ve a esta nena.",
+      "Si pregunto mal, puedo exponerla o perder a la familia.",
+      "En la facultad casi no me formaron en esto.",
+    ],
+    does: [
+      "Busca en Google desde el celular entre una consulta y otra",
+      "Encuentra guías pensadas para docentes y familias",
+      "Le pregunta por WhatsApp a la trabajadora social del hospital",
+      "Guarda un PDF para leerlo con calma a la noche",
+    ],
+    feels: [
+      "Responsable por la niña",
+      "Apurado por el tiempo de consulta",
+      "Inseguro sobre el procedimiento correcto",
+      "Aliviado cuando encuentra un paso a paso",
+    ],
+    pains: [
+      "No hay contenido pensado para equipos de salud",
+      "No hay protocolo de derivación por provincia",
+      "Documentos largos que no puede leer en la consulta",
+      "No encuentra capacitaciones para su profesión",
+    ],
+    gains: [
+      "Una guía breve de señales de alerta para la consulta",
+      "Un protocolo de derivación según su provincia",
+      "Acceso al Campus con capacitaciones certificadas",
+      "Material para entregar a las familias",
+    ],
+  },
+  {
     persona: "camila",
     scenario: "Una foto íntima suya circula entre compañeros. Busca una solución sola, desde su celular.",
     says: [
@@ -154,7 +196,7 @@ export const empathyMaps = [
       "Teme ser juzgada",
     ],
     gains: [
-      "Acceso directo a Bajalo Ya! desde la home",
+      "Acceso directo a Bajalo Ya! y ReConectate desde cualquier pantalla",
       "Un mensaje claro: “no es tu culpa”",
       "Garantías de confidencialidad antes de empezar",
       "Lenguaje cercano y una experiencia 100% mobile",
@@ -176,7 +218,7 @@ export const empathyMaps = [
     does: [
       "Descubre la fundación en un medio o en LinkedIn desde el celular",
       "Pasa a la computadora para investigar y donar",
-      "Busca informes anuales y datos de transparencia",
+      "Busca informes anuales, datos de transparencia y notas en medios",
       "Compara con otras ONGs antes de decidir",
     ],
     feels: [
@@ -188,12 +230,14 @@ export const empathyMaps = [
     pains: [
       "“Quiero Colaborar” cortado o ausente según el dispositivo",
       "Sin datos de impacto ni informes de transparencia",
+      "Sin notas en medios ni reconocimientos visibles",
       "Botones que no son links reales",
       "Señales de descuido que restan credibilidad",
     ],
     gains: [
       "Un diseño profesional y confiable",
-      "Impacto en números y rendición de cuentas",
+      "Impacto en números a lo largo de los años",
+      "Notas en medios que respalden a la fundación",
       "Un proceso de donación simple y seguro",
       "Información clara para alianzas corporativas y RSE",
     ],
@@ -228,7 +272,7 @@ export const empathyMaps = [
       "Errores de diseño en la página Evidencia",
       "No hay repositorio de publicaciones con filtros",
       "Faltan formatos para citar y fichas descargables",
-      "No hay contacto para prensa o instituciones",
+      "No hay contacto para el ámbito académico y legislativo",
     ],
     gains: [
       "Un repositorio filtrable por año, tema y tipo",
@@ -274,6 +318,44 @@ export const empathyMaps = [
       "Misión, programas e impacto en pocos minutos",
       "Un resumen institucional descargable en inglés",
       "Un contacto directo para alianzas internacionales",
+    ],
+  },
+  {
+    persona: "valeria",
+    scenario:
+      "Un caso de grooming se volvió noticia nacional y tiene que entregar una nota de contexto antes del cierre.",
+    says: [
+      "“Tengo un cierre en dos horas y necesito datos y una voz de la fundación.”",
+      "“¿De qué año es este dato y cuál es la fuente?”",
+      "“¿Hay alguien disponible para una entrevista hoy?”",
+    ],
+    thinks: [
+      "Si no consigo una fuente rápido, uso la de otra organización.",
+      "No quiero revictimizar a la nena ni a su familia.",
+      "Necesito algo que pueda citar sin miedo a equivocarme.",
+    ],
+    does: [
+      "Busca en Google “grooming estadísticas Argentina”",
+      "Recorre Evidencia y PDFs buscando cifras con fecha",
+      "Busca un mail de prensa y termina en el formulario general",
+      "Le escribe por redes a la fundación esperando una respuesta",
+    ],
+    feels: [
+      "Presionada por el cierre",
+      "Frustrada por no encontrar un contacto de prensa",
+      "Desconfiada de datos sin fecha",
+      "Comprometida con informar con responsabilidad",
+    ],
+    pains: [
+      "No hay sección de prensa ni contacto para medios",
+      "Datos dispersos, sin fecha ni fuente clara",
+      "No sabe quién responde ni en cuánto tiempo",
+    ],
+    gains: [
+      "Una sala de prensa con contacto directo y voceros",
+      "Datos clave con fuente y fecha, listos para citar",
+      "Una guía para informar sin revictimizar",
+      "Logos, fotos y notas anteriores en un solo lugar",
     ],
   },
 ];

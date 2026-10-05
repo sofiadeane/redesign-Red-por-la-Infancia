@@ -425,7 +425,7 @@
 }
 .groups {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
 .group {
@@ -1226,5 +1226,83 @@
   .emap__pg--pains {
     border-right: none;
     border-bottom: 1px solid var(--line);
+  }
+}
+
+/* Entrevista con la fundación */
+.findings {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.finding {
+  --k: var(--purple);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px;
+  border-top: 4px solid var(--k);
+}
+.finding[data-kind="cambia"] {
+  --k: var(--pink);
+}
+.finding[data-kind="suma"] {
+  --k: var(--blue);
+}
+.finding[data-kind="confirma"] {
+  --k: var(--mint);
+}
+.finding[data-kind="pendiente"] {
+  --k: var(--yellow);
+}
+.finding__tag {
+  align-self: flex-start;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: color-mix(in srgb, var(--k) 25%, white);
+}
+.finding h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.finding p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.finding__who {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-2);
+}
+.finding__who img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+}
+.finding__who img + img {
+  margin-left: -12px;
+  box-shadow: 0 0 0 2px #fff;
+}
+
+@media (max-width: 1024px) {
+  .findings {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .findings {
+    grid-template-columns: 1fr;
   }
 }

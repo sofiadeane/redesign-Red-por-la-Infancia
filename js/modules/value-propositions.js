@@ -28,7 +28,7 @@ const PHASES = [
   {
     until: Infinity,
     title: "Lo que sobrevive.",
-    caption: "Ocho propuestas de valor, cada una conectada con la necesidad principal de una persona.",
+    caption: "Diez propuestas de valor, cada una conectada con la necesidad principal de una persona.",
   },
 ];
 

@@ -24,6 +24,7 @@
   --mint: #7fdcb6;
   --mint-soft: #ddf6ea;
   --teal: #2a9d9a;
+  --red: #ef5b5b;
 
   /* Equipo de Red por la Infancia: identidad de 3 colores */
   --team: linear-gradient(120deg, var(--pink), var(--lime) 50%, var(--blue));

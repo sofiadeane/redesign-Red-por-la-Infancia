@@ -1,12 +1,12 @@
 /**
  * Mapas de recorrido. "mood" va de 1 (muy mal) a 5 (muy bien) y dibuja la curva emocional.
- * Fuente: Notion del proyecto (1.4 - Mapa de Usuarios).
+ * Fuente: Notion del proyecto (1.4 - Mapa de Usuarios) y entrevista con la directora ejecutiva.
  */
 
 export const journeys = [
   {
     persona: "laura",
-    goal: "Encontrar rápido a quién llamar porque su sobrina le contó algo que la alarmó.",
+    goal: "Encontrar rápido a quién llamar porque su sobrina le contó algo que la alarmó, sabiendo que la fundación deriva pero no atiende casos.",
     mood: [1, 3, 1, 2, 3, 4],
     steps: [
       {
@@ -29,9 +29,17 @@ export const journeys = [
       },
       {
         action: "Elegir la línea adecuada",
-        tasks: ["Leer las líneas", "Abrir los acordeones", "Decidir si es una urgencia"],
+        tasks: [
+          'Leer que la fundación "no es una organización de asistencia directa"',
+          "Abrir los acordeones de las líneas",
+          "Decidir si es una urgencia",
+        ],
         feelings: ["Confundida", "Insegura"],
-        opportunities: ['Guía "¿Qué está pasando?"', "911, 137 y 102 visibles sin acordeones"],
+        opportunities: [
+          "Aviso claro: qué hace la fundación y a quién recurrir",
+          'Guía "¿Qué está pasando?" que deriva a la línea oficial o a Bajalo Ya!',
+          "911, 137 y 102 visibles sin acordeones",
+        ],
       },
       {
         action: "Llamar",
@@ -68,7 +76,11 @@ export const journeys = [
         action: "Buscar contenido para su edad",
         tasks: ["Recorrer 9 campañas apiladas", "Entrar a ReConectate", 'Elegir "Madres, padres y familias"'],
         feelings: ["Abrumada", "Perdida"],
-        opportunities: ["Rutas por edad", "Contenido destacado para familias"],
+        opportunities: [
+          "Navegación por público, como en ReConectate",
+          "Accesos directos al Campus, ReConectate y Pantasaurus",
+          "Rutas por edad",
+        ],
       },
       {
         action: "Leer y entender",
@@ -140,6 +152,52 @@ export const journeys = [
         tasks: ["Ir a ReConectate (Docentes)", "Buscar materiales para el aula"],
         feelings: ["Motivado", "Con dudas"],
         opportunities: ["Kit descargable para docentes", "Medir descargas en Analytics"],
+      },
+    ],
+  },
+  {
+    persona: "javier",
+    goal: "Saber qué hacer ante señales de alerta en una consulta pediátrica y a qué servicio derivar.",
+    mood: [3, 2, 2, 3, 4, 4],
+    steps: [
+      {
+        action: "Buscar entre consultas",
+        tasks: [
+          'Buscar en Google "señales de abuso infantil consulta pediátrica"',
+          "Entrar desde el celular",
+        ],
+        feelings: ["Apurado", "Responsable"],
+        opportunities: ["Página de destino para profesionales de la salud"],
+      },
+      {
+        action: "Encontrar material para su profesión",
+        tasks: ["Recorrer guías pensadas para docentes y familias", "Buscar algo para equipos de salud"],
+        feelings: ["Perdido", "Frustrado"],
+        opportunities: ["Navegación por público con entrada para salud", "Guías filtrables por profesión"],
+      },
+      {
+        action: "Entender el protocolo",
+        tasks: ["Leer qué preguntar y qué registrar", "Buscar el protocolo de su provincia"],
+        feelings: ["Inseguro"],
+        opportunities: ["Guía breve de detección para la consulta", "Protocolo de derivación por provincia"],
+      },
+      {
+        action: "Derivar el caso",
+        tasks: ["Hablar con la trabajadora social", "Contactar al servicio de protección local"],
+        feelings: ["Nervioso", "Decidido"],
+        opportunities: ["Directorio de servicios de protección por provincia", "Teléfonos con un toque"],
+      },
+      {
+        action: "Formarse",
+        tasks: ["Buscar una capacitación", "Inscribirse en el Campus"],
+        feelings: ["Motivado"],
+        opportunities: ["Acceso directo al Campus", "Capacitaciones certificadas para salud"],
+      },
+      {
+        action: "Acompañar a la familia",
+        tasks: ["Buscar material para entregar", "Compartirlo por WhatsApp"],
+        feelings: ["Más tranquilo"],
+        opportunities: ["Material descargable para familias", "Botón para compartir"],
       },
     ],
   },
@@ -216,9 +274,17 @@ export const journeys = [
       },
       {
         action: "Ver el impacto",
-        tasks: ["Buscar cifras e informes anuales", "Revisar alianzas (UNICEF, INSPIRE)"],
+        tasks: [
+          "Buscar cifras e informes anuales",
+          "Buscar notas en medios",
+          "Revisar alianzas (UNICEF, INSPIRE)",
+        ],
         feelings: ["Insatisfecho (no encuentra datos)"],
-        opportunities: ["Sección de impacto en números", "Informes anuales descargables"],
+        opportunities: [
+          "Sección para donantes y financiadores",
+          "Impacto en números a lo largo de los años",
+          "Notas en medios y reconocimientos",
+        ],
       },
       {
         action: "Ir a donar",
@@ -281,7 +347,7 @@ export const journeys = [
         action: "Contactar a la organización",
         tasks: ["Buscar un contacto institucional", "Escribir al mail general"],
         feelings: ["Insegura de recibir respuesta"],
-        opportunities: ["Contacto específico para prensa e instituciones"],
+        opportunities: ["Contacto institucional para academia y ámbito legislativo, separado de prensa"],
       },
       {
         action: "Hacer seguimiento",
@@ -343,6 +409,52 @@ export const journeys = [
         tasks: ["Buscar un contacto internacional", "Escribir al mail general en inglés"],
         feelings: ["Dudas", "Esperanzada"],
         opportunities: ["Formulario de alianzas en inglés", "Aclarar idiomas y plazos de respuesta"],
+      },
+    ],
+  },
+  {
+    persona: "valeria",
+    goal: "Conseguir datos confiables y una entrevista con la fundación para una nota que cierra hoy.",
+    mood: [3, 2, 2, 1, 3, 4],
+    steps: [
+      {
+        action: "Buscar una fuente",
+        tasks: [
+          'Buscar "grooming estadísticas Argentina"',
+          "Encontrar notas anteriores que citan a la fundación",
+        ],
+        feelings: ["Apurada", "Interesada"],
+        opportunities: ["Buen posicionamiento de datos clave en Google"],
+      },
+      {
+        action: "Buscar la sección de prensa",
+        tasks: ["Recorrer el menú", "Buscar un contacto para medios"],
+        feelings: ["Perdida", "Impaciente"],
+        opportunities: ["Sala de prensa en la navegación principal", "Entrada propia para prensa"],
+      },
+      {
+        action: "Encontrar datos citables",
+        tasks: ["Recorrer Evidencia y PDFs", "Buscar fecha y fuente de cada dato"],
+        feelings: ["Desconfiada"],
+        opportunities: ["Datos clave con fuente y fecha", "Fichas listas para citar"],
+      },
+      {
+        action: "Pedir una entrevista",
+        tasks: ["Escribir al formulario general", "Escribir por redes"],
+        feelings: ["Frustrada", "Ansiosa"],
+        opportunities: ["Contacto de prensa con plazo de respuesta", "Voceros por tema"],
+      },
+      {
+        action: "Escribir la nota",
+        tasks: ["Chequear cómo nombrar a la víctima", "Elegir imágenes"],
+        feelings: ["Responsable", "Insegura"],
+        opportunities: ["Guía para informar sin revictimizar", "Logos y fotos descargables"],
+      },
+      {
+        action: "Publicar y volver",
+        tasks: ["Citar a la fundación", "Guardar el contacto para la próxima"],
+        feelings: ["Satisfecha"],
+        opportunities: ["Notas publicadas en la sección de medios", "Newsletter para prensa"],
       },
     ],
   },
