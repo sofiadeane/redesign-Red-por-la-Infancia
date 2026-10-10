@@ -1041,22 +1041,22 @@
   }
 }
 
-/* Mapas de empatía */
+/* Mapas de empatía: mapa explorable (títulos alrededor de la persona + panel de lectura) */
 .emap {
   padding: 0;
   overflow: hidden;
 }
 .emap__head {
-  padding: 26px 28px;
+  padding: 20px 28px;
   background: linear-gradient(110deg, color-mix(in srgb, var(--c) 30%, white), #fff 70%);
   display: flex;
-  gap: 18px;
+  gap: 16px;
   align-items: center;
   border-bottom: 1px solid var(--line);
 }
 .emap__head img {
-  width: 60px;
-  height: 60px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   box-shadow: 0 0 0 4px #fff;
   flex-shrink: 0;
@@ -1065,7 +1065,7 @@
   margin: 0;
   font-family: var(--f-display);
   font-weight: 400;
-  font-size: 30px;
+  font-size: 28px;
   line-height: 1.05;
 }
 .emap__head h3 span::before {
@@ -1077,36 +1077,235 @@
   color: var(--ink-2);
 }
 .emap__head p {
-  margin: 6px 0 0;
+  margin: 4px 0 0;
   color: var(--ink-2);
   font-size: 15px;
 }
+.emap__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  min-height: 460px;
+}
+
+/* Lienzo: cuatro cuadrantes iguales con la persona en el centro exacto, y dolores / ganancias abajo */
 .emap__canvas {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 10px;
+  padding: 22px;
+  border-right: 1px solid var(--line);
+  background: radial-gradient(circle at 50% 42%, color-mix(in srgb, var(--c) 14%, white), #fff 70%);
+}
+.emap__quads {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  min-height: 300px;
 }
-.emap__q,
-.emap__pg {
-  padding: 26px 28px 28px;
+.emap__pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
-.emap__q--says {
-  border-right: 1px dashed var(--line);
-  border-bottom: 1px dashed var(--line);
-  padding-right: 72px;
+.emap__tile {
+  --dx: 0px;
+  --dy: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: rgba(255, 255, 255, 0.92);
+  text-align: left;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s,
+    opacity 0.2s;
 }
-.emap__q--thinks {
-  border-bottom: 1px dashed var(--line);
-  padding-left: 72px;
+.emap__tile:hover {
+  border-color: var(--c);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
 }
-.emap__q--does {
-  border-right: 1px dashed var(--line);
-  padding-right: 72px;
-  padding-top: 40px;
+.emap__tile[aria-pressed="true"] {
+  background: color-mix(in srgb, var(--c) 32%, white);
+  border-color: var(--c);
+  box-shadow: var(--shadow);
 }
-.emap__q--feels {
-  padding-left: 72px;
-  padding-top: 40px;
+.emap.has-selection .emap__tile[aria-pressed="false"] {
+  opacity: 0.62;
+}
+.emap.has-selection .emap__tile[aria-pressed="false"]:hover {
+  opacity: 1;
+}
+.emap__tile-label {
+  font-family: var(--f-display);
+  font-size: 30px;
+  line-height: 1;
+}
+.emap__tile-count {
+  font-size: 13px;
+  color: var(--ink-3);
+}
+/* Cada cuadrante apunta hacia su esquina y deja libre el centro para la persona */
+.emap__tile--says {
+  justify-content: flex-start;
+  --dx: 40px;
+  --dy: 40px;
+}
+.emap__tile--thinks {
+  justify-content: flex-start;
+  align-items: flex-end;
+  text-align: right;
+  --dx: -40px;
+  --dy: 40px;
+}
+.emap__tile--does {
+  justify-content: flex-end;
+  --dx: 40px;
+  --dy: -40px;
+}
+.emap__tile--feels {
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: right;
+  --dx: -40px;
+  --dy: -40px;
+}
+.emap__pair .emap__tile {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  --dy: -30px;
+}
+.emap__pair .emap__tile-label {
+  font-size: 24px;
+}
+.emap__pair .emap__tile-count {
+  display: grid;
+  place-items: center;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--soft);
+  font-weight: 600;
+  color: var(--ink-2);
+}
+.emap__tile--pains[aria-pressed="true"] .emap__tile-count {
+  background: rgba(255, 255, 255, 0.15);
+}
+.emap__tile--pains .emap__tile-label::before {
+  content: "− ";
+  color: var(--ink-3);
+}
+.emap__tile--gains .emap__tile-label::before {
+  content: "+ ";
+  color: var(--ink-3);
+}
+.emap__tile--pains[aria-pressed="true"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+.emap__tile--pains[aria-pressed="true"] .emap__tile-count,
+.emap__tile--pains[aria-pressed="true"] .emap__tile-label::before {
+  color: rgba(255, 255, 255, 0.7);
+}
+.emap__center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow:
+    0 0 0 7px var(--c),
+    var(--shadow-lg);
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 2px;
+  text-align: center;
+  pointer-events: none;
+}
+.emap__center img {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+}
+.emap__center span {
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+/* Animación de entrada: la persona aparece y los títulos se abren desde el centro */
+.emap.is-waiting .emap__tile,
+.emap.is-waiting .emap__center {
+  opacity: 0;
+}
+.emap.is-entering .emap__center {
+  animation: emapCenter 0.5s cubic-bezier(0.2, 0.9, 0.3, 1.3) both;
+}
+.emap.is-entering .emap__tile {
+  animation: emapOut 0.55s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+  animation-delay: calc(0.15s + var(--i) * 0.08s);
+}
+@keyframes emapCenter {
+  from {
+    opacity: 0;
+    scale: 0.6;
+  }
+}
+@keyframes emapOut {
+  from {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) scale(0.85);
+  }
+}
+
+/* Panel de lectura */
+.emap__panel {
+  display: flex;
+  flex-direction: column;
+  padding: 26px 28px;
+}
+.emap__empty {
+  margin: auto;
+  max-width: 34ch;
+  text-align: center;
+  color: var(--ink-2);
+  font-size: 15.5px;
+}
+.emap__empty p {
+  margin: 0;
+}
+.emap__empty b {
+  color: var(--ink);
+}
+.emap__empty-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--c) 30%, white);
+  font-size: 20px;
+  animation: emapNudge 1.8s ease-in-out infinite;
+}
+@keyframes emapNudge {
+  50% {
+    translate: -4px -4px;
+  }
 }
 .emap__label {
   display: inline-block;
@@ -1119,10 +1318,14 @@
   letter-spacing: 0.1em;
   background: color-mix(in srgb, var(--c) 35%, white);
 }
+.emap__detail--pains .emap__label {
+  background: var(--ink);
+  color: #fff;
+}
 .emap__hint {
-  margin: 8px 0 12px;
+  margin: 8px 0 14px;
   color: var(--ink-3);
-  font-size: 13px;
+  font-size: 13.5px;
 }
 .emap ul {
   margin: 0;
@@ -1132,86 +1335,91 @@
   gap: 8px;
 }
 .emap li {
-  padding: 10px 14px;
+  padding: 11px 14px;
   border-radius: var(--r-sm);
-  background: color-mix(in srgb, var(--c) 9%, white);
-  border-left: 3px solid color-mix(in srgb, var(--c) 60%, white);
-  font-size: 14.5px;
-  line-height: 1.4;
+  background: color-mix(in srgb, var(--c) 10%, white);
+  border-left: 3px solid color-mix(in srgb, var(--c) 70%, white);
+  font-size: 15px;
+  line-height: 1.45;
 }
-.emap__q--says li {
+.emap__detail--says li {
   font-style: italic;
 }
-.emap__center {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 112px;
-  height: 112px;
-  border-radius: 50%;
-  background: #fff;
-  border: 1px solid var(--line);
-  box-shadow:
-    0 0 0 8px var(--c),
-    var(--shadow);
-  display: grid;
-  place-items: center;
-  align-content: center;
-  gap: 2px;
-  text-align: center;
-}
-.emap__center img {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-}
-.emap__center span {
-  font-size: 12.5px;
-  font-weight: 600;
-}
-.emap__bottom {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-top: 1px solid var(--line);
-}
-.emap__pg--pains {
+.emap__detail--pains li {
   background: var(--soft);
-  border-right: 1px solid var(--line);
+  border-left-color: var(--ink-3);
 }
-.emap__pg--gains {
-  background: color-mix(in srgb, var(--c) 16%, white);
+.emap__panel.is-swap li {
+  animation: emapItem 0.4s cubic-bezier(0.2, 0.9, 0.3, 1) both;
+  animation-delay: calc(var(--i) * 0.06s);
 }
-.emap__pg .emap__label::before {
-  margin-right: 6px;
+.emap__panel.is-swap .emap__label,
+.emap__panel.is-swap .emap__hint {
+  animation: emapItem 0.3s both;
 }
-.emap__pg--pains .emap__label {
-  background: var(--ink);
-  color: #fff;
+@keyframes emapItem {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
 }
-.emap__pg--pains .emap__label::before {
-  content: "−";
+.emap__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 20px;
+  font-size: 13px;
+  color: var(--ink-3);
 }
-.emap__pg--gains .emap__label {
-  background: var(--c);
-}
-.emap__pg--gains .emap__label::before {
-  content: "+";
-}
-.emap__pg li {
-  background: #fff;
+.emap__nav button {
+  padding: 7px 14px;
   border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 13.5px;
+  font-weight: 500;
 }
-.emap__pg--gains li {
-  border-left: 3px solid var(--c);
+.emap__nav button:hover {
+  border-color: var(--ink-3);
 }
-.emap__pg--pains li {
-  border-left: 3px solid var(--ink-3);
+
+@media (prefers-reduced-motion: reduce) {
+  .emap.is-waiting .emap__tile,
+  .emap.is-waiting .emap__center {
+    opacity: 1;
+  }
+  .emap.is-entering .emap__tile,
+  .emap.is-entering .emap__center,
+  .emap__panel.is-swap li,
+  .emap__empty-icon {
+    animation: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .emap__body {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .emap__canvas {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .emap__panel {
+    min-height: 220px;
+    scroll-margin-bottom: 16px;
+  }
 }
 
 @media (max-width: 760px) {
   .emap__head {
-    padding: 20px;
+    padding: 16px 18px;
+    align-items: flex-start;
+  }
+  .emap__head h3 {
+    font-size: 24px;
   }
   .emap__head h3 span {
     display: block;
@@ -1220,29 +1428,56 @@
   .emap__head h3 span::before {
     content: none;
   }
-  .emap__canvas,
-  .emap__bottom {
-    grid-template-columns: 1fr;
+  .emap__head p {
+    font-size: 14px;
+  }
+  .emap__canvas {
+    padding: 14px;
+    gap: 8px;
+  }
+  .emap__quads {
+    gap: 8px;
+    min-height: 0;
+    grid-template-rows: 112px 112px;
+  }
+  .emap__pair {
+    gap: 8px;
+  }
+  .emap__tile {
+    padding: 12px 14px;
+  }
+  .emap__tile-label {
+    font-size: 24px;
+  }
+  .emap__tile-count {
+    font-size: 12px;
+  }
+  .emap__pair .emap__tile {
+    padding: 11px 14px;
+  }
+  .emap__pair .emap__tile-label {
+    font-size: 20px;
   }
   .emap__center {
-    display: none;
+    width: 76px;
+    height: 76px;
+    box-shadow:
+      0 0 0 5px var(--c),
+      var(--shadow-lg);
   }
-  .emap__q,
-  .emap__q--says,
-  .emap__q--thinks,
-  .emap__q--does,
-  .emap__q--feels,
-  .emap__pg {
-    padding: 22px 20px;
-    border-right: none;
-    border-bottom: 1px dashed var(--line);
+  .emap__center img {
+    width: 40px;
+    height: 40px;
   }
-  .emap__q--feels {
-    border-bottom: none;
+  .emap__center span {
+    font-size: 11px;
   }
-  .emap__pg--pains {
-    border-right: none;
-    border-bottom: 1px solid var(--line);
+  .emap__panel {
+    padding: 20px 18px;
+  }
+  .emap__nav button {
+    padding: 7px 11px;
+    font-size: 13px;
   }
 }
 
