@@ -1,7 +1,8 @@
 /**
  * Rediseño Red por la Infancia · UX Case Study
- * Punto de entrada: inicializa cada sección del sitio.
+ * Página de proceso: inicializa cada sección del caso completo.
  */
+import { initSite } from "./modules/site.js";
 import { initNavigation } from "./modules/navigation.js";
 import { initAudit } from "./modules/audit.js";
 import { initPainPoints } from "./modules/pain-points.js";
@@ -13,9 +14,11 @@ import { initJourneys } from "./modules/journeys.js";
 import { initDefine } from "./modules/define.js";
 import { initValuePropositions } from "./modules/value-propositions.js";
 import { initIdeate } from "./modules/ideate.js";
+import { initClosing } from "./modules/closing.js";
 import { initReveal } from "./modules/reveal.js";
 
-// 00 · Navegación general
+// Navegación general y contacto
+initSite();
 initNavigation();
 
 // 01 · Empathize
@@ -33,6 +36,9 @@ initValuePropositions();
 
 // 03 · Ideate
 initIdeate();
+
+// Cierre: aprendizajes y lo que viene
+initClosing();
 
 // Animaciones de entrada (al final, para incluir el contenido generado)
 initReveal();

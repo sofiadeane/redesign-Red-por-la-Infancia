@@ -19,6 +19,7 @@ Markdowns listos para copiar en Notion. Cada archivo es una página; el número 
 | `04-portfolio/1-sitemaps.md` | Subpágina de 4 | Nuevo, para revisar |
 | `04-portfolio/2-estructura-dos-paginas.md` | Subpágina de 4 | Nuevo, para revisar |
 | `04-portfolio/3-auditoria-recruiter.md` | Subpágina de 4 | Nuevo, para revisar |
+| `04-portfolio/4-implementacion.md` | Subpágina de 4 | Nuevo: qué se implementó y qué falta |
 
 ## Cómo pegarlo
 Abrí el `.md`, copiá todo el texto y pegalo en la página de Notion: Notion convierte los títulos, tablas y listas solo. La primera línea (`# Título`) es el título de la página; no hace falta pegarla.

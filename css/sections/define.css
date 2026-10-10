@@ -347,3 +347,14 @@
     height: 30px;
   }
 }
+
+/* Problem statements: primero las personas primarias */
+.statements:not(.is-all) .statement--extra {
+  display: none;
+}
+.more {
+  margin: 24px auto 0;
+  display: flex;
+  width: max-content;
+  max-width: 100%;
+}

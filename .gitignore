@@ -1,0 +1,5 @@
+# Archivos del sistema (macOS)
+.DS_Store
+
+# Archivos para borrar a mano
+_to_delete/

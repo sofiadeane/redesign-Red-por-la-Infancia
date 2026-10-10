@@ -4,7 +4,7 @@
 import { $, $$, escapeHtml, restartAnimation } from "../utils/dom.js";
 import { avatarSrc } from "../config.js";
 import { central, defineItems, uniqueValueProposition } from "../data/define.js";
-import { personaName, personaRole } from "../data/people.js";
+import { findPersona, personaName, personaRole } from "../data/people.js";
 
 const PAIN_LABELS = {
   financiero: "Financiero",
@@ -13,11 +13,14 @@ const PAIN_LABELS = {
   soporte: "Soporte",
 };
 
+/** Las personas primarias se muestran primero; el resto, al pedirlo. */
+const isPrimary = (id) => Boolean(findPersona(id)?.primary);
+
 const subject = (id) => (id === "equipo" ? "El equipo" : personaName(id));
 
 function statementTemplate(item, index) {
   return `
-    <article class="statement card" style="animation-delay:${index * 50}ms">
+    <article class="statement card${isPrimary(item.persona) ? "" : " statement--extra"}" style="animation-delay:${index * 50}ms">
       <div class="statement__who">
         <img src="${avatarSrc(item.persona)}" alt="">
         <div>
@@ -80,13 +83,30 @@ function initHypotheses() {
   show(defineItems[0].persona);
 }
 
+function initStatements() {
+  const container = $("#statements");
+  const more = $("#statementsMore");
+  const ordered = [...defineItems].sort((a, b) => isPrimary(b.persona) - isPrimary(a.persona));
+  const extras = ordered.filter((item) => !isPrimary(item.persona)).length;
+
+  container.innerHTML = ordered.map(statementTemplate).join("");
+  more.textContent = `Ver los ${ordered.length} problem statements (+${extras})`;
+
+  more.addEventListener("click", () => {
+    const open = container.classList.toggle("is-all");
+    more.setAttribute("aria-expanded", open);
+    more.textContent = open
+      ? "Ver solo las personas primarias"
+      : `Ver los ${ordered.length} problem statements (+${extras})`;
+  });
+}
+
 export function initDefine() {
-  $("#summaryValue").textContent = central.value;
   $("#centralProblem").textContent = central.problem;
   $("#centralHypothesis").textContent = central.hypothesis;
   $("#vpGeneral").textContent = central.value;
   $("#vpUnique").textContent = uniqueValueProposition;
 
-  $("#statements").innerHTML = defineItems.map(statementTemplate).join("");
+  initStatements();
   initHypotheses();
 }

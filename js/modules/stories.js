@@ -41,7 +41,7 @@ function storyTemplate(story, index) {
 export function initStories() {
   const container = $("#stories");
   const personaFilters = $("#storyPersonaFilters");
-  const state = { priority: "all", persona: "all" };
+  const state = { priority: "Debe", persona: "all" };
 
   personaFilters.innerHTML = [
     `<button class="chip is-on" data-sper="all">Todas las personas</button>`,
@@ -51,6 +51,7 @@ export function initStories() {
     ),
   ].join("");
   $("#countAll").textContent = stories.length;
+  $("#countMust").textContent = stories.filter((story) => story.priority === "Debe").length;
 
   const render = () => {
     const visible = stories.filter(

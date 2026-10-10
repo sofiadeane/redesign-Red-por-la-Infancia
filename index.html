@@ -6,12 +6,12 @@
     <title>Rediseño Red por la Infancia · UX Case Study · Sofía Deane</title>
     <meta
       name="description"
-      content="Caso de estudio UX: rediseño del sitio de Fundación Red por la Infancia. Proceso de design thinking: Empathize, Define, Ideate, Prototype y Test."
+      content="Caso de estudio UX de Sofía Deane: rediseño mobile-first del sitio de Fundación Red por la Infancia, con design thinking."
     />
     <meta property="og:title" content="Rediseño Red por la Infancia · UX Case Study" />
     <meta
       property="og:description"
-      content="Investigación, personas, historias de usuario y mapas de recorrido para rediseñar el sitio de una fundación que protege a las infancias."
+      content="Caso de estudio UX de Sofía Deane: rediseño mobile-first del sitio de Fundación Red por la Infancia, con design thinking."
     />
     <meta
       property="og:image"
@@ -31,10 +31,7 @@
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/sections/hero.css" />
     <link rel="stylesheet" href="css/sections/summary.css" />
-    <link rel="stylesheet" href="css/sections/empathize.css" />
-    <link rel="stylesheet" href="css/sections/define.css" />
-    <link rel="stylesheet" href="css/sections/ideate.css" />
-    <link rel="stylesheet" href="css/sections/upcoming.css" />
+    <link rel="stylesheet" href="css/sections/landing.css" />
   </head>
   <body>
     <a class="skip" href="#main">Saltar al contenido</a>
@@ -42,108 +39,147 @@
 
     <!-- ===== TOP BAR ===== -->
     <header class="topbar">
-      <a class="pill pill--back" href="https://github.com/sofiadeane" aria-label="Volver al portfolio">
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
-          <path
-            d="M15 5l-7 7 7 7"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="3"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-        <span>Portfolio</span>
+      <a class="brand" href="index.html" aria-label="Sofía Deane · inicio">
+        <span class="brand__mark" aria-hidden="true">SD</span>
+        <span class="brand__name">Sofía Deane</span>
       </a>
-      <nav class="stages" aria-label="Etapas del proceso">
-        <a href="#resumen" class="stage-link is-active" data-stage="resumen">00 Resumen</a>
-        <a href="#empathize" class="stage-link" data-stage="empathize">01 Empathize</a>
-        <a href="#define" class="stage-link" data-stage="define">02 Define</a>
-        <a href="#ideate" class="stage-link" data-stage="ideate">03 Ideate</a>
-        <a href="#proximamente" class="stage-link is-locked" data-stage="prototype" aria-disabled="true"
-          >04 Prototype</a
-        >
-        <a href="#proximamente" class="stage-link is-locked" data-stage="test" aria-disabled="true"
-          >05 Test</a
-        >
+      <nav class="switch" aria-label="Vista del caso" data-switch>
+        <a class="switch__link" href="index.html" aria-current="page">Resumen</a>
+        <a class="switch__link" href="proceso.html">Proceso</a>
+        <span class="switch__thumb" aria-hidden="true"></span>
       </nav>
     </header>
 
     <main id="main">
       <!-- ===== HERO ===== -->
-      <section class="hero" id="top">
+      <section class="hero hero--split" id="top">
         <div class="orb orb--1" aria-hidden="true"></div>
         <div class="orb orb--2" aria-hidden="true"></div>
         <div class="orb orb--3" aria-hidden="true"></div>
         <div class="wrap hero__inner">
-          <div class="hero__tags">
-            <span class="tag tag--lime">UX Case Study</span>
-            <span class="tag tag--white"><span class="dot dot--live"></span> En progreso · etapa 3 de 5</span>
-          </div>
-          <h1 class="hero__title">Rediseño <em>Red por la Infancia</em></h1>
-          <p class="hero__lead">
-            Un sitio más claro, accesible y pensado para el celular, para que las familias, adolescentes y
-            docentes encuentren ayuda y recursos cuando más los necesitan.
-          </p>
-          <a class="btn" href="#resumen">Ver el resumen ↓</a>
-        </div>
-      </section>
-
-      <!-- ===================================================== -->
-      <!-- ===== 00 · RESUMEN ===== -->
-      <!-- ===================================================== -->
-      <section class="stage-hero stage-hero--compact" id="resumen">
-        <div class="wrap">
-          <span class="stage-hero__num">00</span>
-          <div>
-            <p class="eyebrow">Resumen ejecutivo</p>
-            <h2 class="stage-hero__title">Resumen del proceso</h2>
-            <p class="stage-hero__lead">
-              Todo el proyecto en dos minutos. Si algo te interesa, podés entrar al detalle de cada etapa.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section summary">
-        <div class="wrap">
-          <div class="summary__intro">
-            <div class="prose">
-              <p class="eyebrow">El proyecto</p>
-              <p class="summary__lead">
-                Red por la Infancia es una fundación argentina que desde 2010 trabaja para prevenir las
-                violencias contra niñas, niños y adolescentes. Su sitio es la puerta de entrada para quien
-                busca ayuda, familias, docentes y equipos de salud, donantes, prensa e instituciones.
-              </p>
-              <p>
-                Hoy el sitio está hecho con un page builder (Divi), creció sin un sistema de diseño y no
-                acompaña a quienes llegan desde el celular ni a quienes no hablan español. Estoy rediseñándolo
-                con el proceso de design thinking.
-              </p>
-              <p>
-                El proyecto tiene un plazo concreto: la Conferencia Mundial de Manila, en noviembre de 2026.
-                Para esa fecha, la fundación necesita al menos presentar su trabajo en inglés ante aliados
-                internacionales, así que el rediseño se prioriza por etapas.
-              </p>
+          <div class="hero__text">
+            <div class="hero__tags">
+              <span class="tag tag--lime">UX Case Study</span>
+              <span class="tag tag--white"
+                ><span class="dot dot--live"></span> <span id="heroStatus"></span
+              ></span>
             </div>
-            <dl class="meta">
-              <div class="meta__item">
-                <dt>Cliente</dt>
-                <dd>Fundación Red por la Infancia</dd>
+            <h1 class="hero__title">Rediseño <em>Red por la Infancia</em></h1>
+            <p class="hero__lead">
+              Un sitio claro, accesible y pensado para el celular, para que cada uno de los ocho públicos de
+              la fundación, desde quien busca ayuda urgente hasta un aliado internacional, encuentre lo suyo
+              en pocos toques.
+            </p>
+            <dl class="byline">
+              <div>
+                <dt>Por</dt>
+                <dd>Sofía Deane</dd>
               </div>
-              <div class="meta__item">
+              <div>
                 <dt>Rol</dt>
-                <dd>UX Research &amp; UX/UI Design</dd>
+                <dd>UX research, UX/UI y desarrollo</dd>
               </div>
-              <div class="meta__item">
-                <dt>Plazo</dt>
-                <dd>Nov 2026 · Conferencia de Manila</dd>
-              </div>
-              <div class="meta__item">
-                <dt>Herramientas</dt>
-                <dd>Notion · Google Analytics · Figma</dd>
+              <div>
+                <dt>Dedicación</dt>
+                <dd>~10 h por semana</dd>
               </div>
             </dl>
+            <div class="hero__ctas">
+              <a class="btn" href="#decisiones">Ver las decisiones ↓</a>
+              <a class="btn btn--ghost" href="proceso.html">Proceso completo →</a>
+            </div>
+          </div>
+
+          <figure class="ba" data-ba style="--pos: 50%">
+            <div class="ba__tags" aria-hidden="true">
+              <span class="ba__tag ba__tag--before">← Hoy</span>
+              <span class="ba__tag ba__tag--after">Concepto →</span>
+            </div>
+            <div class="ba__frame">
+              <img
+                class="ba__before"
+                src="assets/img/audit/09-mobile-home-headline-below-fold-no-ctas.webp"
+                alt="Home actual de Red por la Infancia en el celular: el titular queda debajo de la foto y no hay accesos a pedir ayuda"
+                width="390"
+                height="688"
+              />
+              <div class="ba__after">
+                <div class="concept" aria-hidden="true">
+                  <div class="concept__bar">
+                    <span class="concept__logo"><i></i>Red por la Infancia</span>
+                    <span class="concept__lang">EN</span>
+                    <span class="concept__menu"><i></i><i></i><i></i></span>
+                  </div>
+                  <div class="concept__help">Necesito ayuda <b>→</b></div>
+                  <p class="concept__title">Protegemos a niñas, niños y adolescentes</p>
+                  <p class="concept__lead">Elegí quién sos y te llevamos a lo tuyo.</p>
+                  <p class="concept__label">Soy…</p>
+                  <ul class="concept__grid">
+                    <li class="is-hot">Busco ayuda</li>
+                    <li>Familia</li>
+                    <li>Adolescente</li>
+                    <li>Docente o salud</li>
+                    <li>Donante</li>
+                    <li>Prensa</li>
+                    <li>Academia</li>
+                    <li>International</li>
+                  </ul>
+                  <div class="concept__dock">
+                    <span class="is-hot">Ayuda</span>
+                    <span>Bajalo Ya!</span>
+                    <span>Llamar 102</span>
+                  </div>
+                </div>
+              </div>
+              <span class="ba__handle" aria-hidden="true"><span>‹ ›</span></span>
+              <input
+                class="ba__range"
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                aria-label="Comparar la home actual con el concepto del rediseño"
+              />
+            </div>
+            <figcaption class="ba__cap">
+              Deslizá para comparar. El concepto sale de las implicancias de Ideate; el boceto llega en
+              Prototype.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ===== CONTEXTO Y DESAFÍO ===== -->
+      <section class="section context" id="contexto">
+        <div class="wrap">
+          <div class="context__grid">
+            <div>
+              <p class="eyebrow">El contexto</p>
+              <h2 class="h2">
+                Una fundación que deriva, <mark class="hl hl--pink">un sitio que no lleva</mark>.
+              </h2>
+              <p class="context__lead">
+                Red por la Infancia trabaja desde 2010 para prevenir las violencias contra niñas, niños y
+                adolescentes. No atiende casos: forma y deriva. Pero su sitio, armado con un page builder y
+                sin sistema de diseño, no acompaña a quien llega desde el celular ni a quien no habla español.
+              </p>
+            </div>
+            <div class="kpis kpis--stack">
+              <div class="kpi card">
+                <span class="kpi__num" data-count="50" data-suffix="%">50%</span>
+                <span class="kpi__label">de las visitas son desde el celular, donde el sitio se rompe</span>
+              </div>
+              <div class="kpi card">
+                <span class="kpi__num" data-count="4" data-suffix="%">4%</span>
+                <span class="kpi__label">de los usuarios llega a la página “Necesito Ayuda”</span>
+              </div>
+              <div class="kpi card">
+                <span class="kpi__num" data-count="31" data-suffix="%">31%</span>
+                <span class="kpi__label"
+                  >de los usuarios está fuera de Argentina, y el sitio solo está en español</span
+                >
+              </div>
+            </div>
           </div>
 
           <div class="summary__challenge card">
@@ -154,980 +190,150 @@
               recursos en pocos toques, y que el equipo pueda mantener el sitio sin depender de IT?
             </blockquote>
           </div>
-
-          <p class="eyebrow summary__label">Hallazgos clave</p>
-          <div class="kpis">
-            <div class="kpi card">
-              <span class="kpi__num">50%</span
-              ><span class="kpi__label">de las visitas son desde el celular, donde el sitio se rompe</span>
-            </div>
-            <div class="kpi card">
-              <span class="kpi__num">4%</span
-              ><span class="kpi__label">de los usuarios llega a la página "Necesito Ayuda"</span>
-            </div>
-            <div class="kpi card">
-              <span class="kpi__num">3ª</span
-              ><span class="kpi__label">página más vista: Bajalo Ya!, usada por adolescentes</span>
-            </div>
-            <div class="kpi card">
-              <span class="kpi__num">31%</span
-              ><span class="kpi__label"
-                >de los usuarios está fuera de Argentina, y el sitio solo está en español</span
-              >
-            </div>
-          </div>
-
-          <p class="eyebrow summary__label">Las cinco etapas</p>
-          <ol class="timeline">
-            <li class="tl card tl--done" style="--c: var(--pink)">
-              <span class="tl__n">01</span>
-              <h3>Empathize</h3>
-              <span class="tl__state">Completa</span>
-              <ul>
-                <li>Auditoría de 21 problemas en 3 dispositivos</li>
-                <li>12 meses de Google Analytics</li>
-                <li>Entrevista con la directora ejecutiva</li>
-                <li>9 personas, 33 historias de usuario, 9 mapas de empatía y 9 mapas de recorrido</li>
-              </ul>
-              <a class="tl__link" href="#empathize">Ver la etapa →</a>
-            </li>
-            <li class="tl card tl--done" style="--c: var(--purple)">
-              <span class="tl__n">02</span>
-              <h3>Define</h3>
-              <span class="tl__state">Completa</span>
-              <ul>
-                <li>10 problem statements</li>
-                <li>Hipótesis If / Then medibles</li>
-                <li>10 propuestas de valor y una propuesta única a validar</li>
-              </ul>
-              <a class="tl__link" href="#define">Ver la etapa →</a>
-            </li>
-            <li class="tl card tl--done" style="--c: var(--yellow)">
-              <span class="tl__n">03</span>
-              <h3>Ideate</h3>
-              <span class="tl__state">En curso</span>
-              <ul>
-                <li>Goal statement</li>
-                <li>Competitive audit de 18 organizaciones</li>
-                <li>Próximo: arquitectura de información y bocetos</li>
-              </ul>
-              <a class="tl__link" href="#ideate">Ver la etapa →</a>
-            </li>
-            <li class="tl card" style="--c: var(--mint)">
-              <span class="tl__n">04</span>
-              <h3>Prototype</h3>
-              <span class="tl__state">Próximamente</span>
-              <ul>
-                <li>Wireframes mobile-first</li>
-                <li>Prototipo en Figma</li>
-              </ul>
-            </li>
-            <li class="tl card" style="--c: var(--blue)">
-              <span class="tl__n">05</span>
-              <h3>Test</h3>
-              <span class="tl__state">Próximamente</span>
-              <ul>
-                <li>Tests de usabilidad</li>
-                <li>Iteración</li>
-              </ul>
-            </li>
-          </ol>
-
-          <div class="summary__takeaway card">
-            <div>
-              <p class="eyebrow">En una frase</p>
-              <p class="summary__quote" id="summaryValue"></p>
-            </div>
-            <a class="btn" href="#empathize">Leer el caso completo ↓</a>
-          </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- ===== STAGE 01 · EMPATHIZE ===== -->
-      <!-- ===================================================== -->
-      <section class="stage-hero" id="empathize">
-        <div class="wrap">
-          <span class="stage-hero__num">01</span>
-          <div>
-            <p class="eyebrow">Etapa 1</p>
-            <h2 class="stage-hero__title">Empathize</h2>
-            <p class="stage-hero__lead">
-              Antes de diseñar, entender: auditoría del sitio actual, datos reales de uso, a quién le habla el
-              sitio y qué les pasa cuando lo usan.
-            </p>
-          </div>
-          <ul class="chips chips--static" aria-label="Métodos usados">
-            <li>Auditoría heurística</li>
-            <li>Google Analytics</li>
-            <li>Entrevista con la fundación</li>
-            <li>Proto-personas</li>
-            <li>Mapas de empatía</li>
-            <li>Historias de usuario</li>
-            <li>Mapas de recorrido</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- 1.0 AUDIT -->
-      <section class="section" id="auditoria">
+      <!-- ===== QUÉ ENCONTRÉ → QUÉ DECIDÍ ===== -->
+      <section class="section section--grad-b" id="decisiones">
         <div class="wrap">
           <div class="section-head">
             <div>
-              <p class="eyebrow">Auditoría del sitio actual</p>
-              <h2 class="h2">21 problemas, <mark class="hl hl--lime">documentados</mark>.</h2>
-            </div>
-            <p class="section-head__aside">
-              Recorrí redporlainfancia.org en computadora, tablet y celular y documenté cada problema con
-              capturas. Abrí una carpeta para ver las capturas.
-            </p>
-          </div>
-          <div class="folders" id="folders"></div>
-          <div class="audit-panel" id="auditPanel" hidden>
-            <div class="audit-panel__head">
-              <p class="audit-panel__title" id="auditTitle"></p>
-              <button class="chip" id="auditClose">Cerrar ✕</button>
-            </div>
-            <div class="audit-grid" id="auditGrid"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 1.1 PAIN POINTS -->
-      <section class="section section--grad-a" id="problemas">
-        <div class="wrap">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow eyebrow--dark">Puntos de dolor</p>
-              <h2 class="h2">¿Qué está <mark class="hl hl--pink">fallando</mark> hoy?</h2>
-            </div>
-            <p class="section-head__aside">
-              Seis problemas que surgieron de la auditoría y de los datos de uso, clasificados según el tipo
-              de punto de dolor. Elegí una categoría para filtrarlos.
-            </p>
-          </div>
-          <div class="pain-legend">
-            <div
-              class="filters filters--wrap"
-              role="group"
-              aria-label="Filtrar puntos de dolor por categoría"
-            >
-              <button class="chip is-on" data-pain="all">Todos</button>
-              <button class="chip chip--fin" data-pain="financiero" title="Relacionados con el dinero">
-                Financiero
-              </button>
-              <button class="chip chip--prod" data-pain="producto" title="Problemas de calidad">
-                Producto
-              </button>
-              <button
-                class="chip chip--proc"
-                data-pain="proceso"
-                title="Relacionados con el recorrido del usuario"
-              >
-                Proceso
-              </button>
-              <button class="chip chip--sup" data-pain="soporte" title="Relacionados con conseguir ayuda">
-                Soporte
-              </button>
-            </div>
-            <p class="pain-legend__desc" id="painDesc">
-              Financiero: dinero · Producto: calidad · Proceso: recorrido del usuario · Soporte: conseguir
-              ayuda.
-            </p>
-          </div>
-          <ol class="problems">
-            <li class="problem card" data-cats="producto proceso">
-              <span class="problem__n">01</span>
-              <div class="ptags">
-                <span class="ptag ptag--producto">Producto</span
-                ><span class="ptag ptag--proceso">Proceso</span>
-              </div>
-              <h3>No está pensado para el celular</h3>
-              <p>
-                La mitad de las visitas llegan desde el celular, pero el texto se superpone, los títulos se
-                cortan y hay que hacer zoom para leer.
-              </p>
-            </li>
-            <li class="problem card" data-cats="financiero soporte">
-              <span class="problem__n">02</span>
-              <div class="ptags">
-                <span class="ptag ptag--financiero">Financiero</span
-                ><span class="ptag ptag--soporte">Soporte</span>
-              </div>
-              <h3>Los botones de ayuda y donación desaparecen</h3>
-              <p>
-                "Necesito Ayuda" y "Quiero Colaborar" se cortan o no aparecen en el celular ni en el menú, y
-                los teléfonos de ayuda no se pueden tocar para llamar: se pierden pedidos de ayuda y
-                donaciones.
-              </p>
-            </li>
-            <li class="problem card" data-cats="producto">
-              <span class="problem__n">03</span>
-              <div class="ptags"><span class="ptag ptag--producto">Producto</span></div>
-              <h3>Diseño plano y con errores</h3>
-              <p>
-                Elementos cortados o superpuestos, tarjetas desparejas, columnas vacías, colores que cambian
-                entre páginas y un copyright desactualizado le restan confianza a la organización.
-              </p>
-            </li>
-            <li class="problem card" data-cats="soporte proceso">
-              <span class="problem__n">04</span>
-              <div class="ptags">
-                <span class="ptag ptag--soporte">Soporte</span><span class="ptag ptag--proceso">Proceso</span>
-              </div>
-              <h3>Difícil de actualizar</h3>
-              <p>
-                El equipo no puede publicar contenido nuevo sin pedirle a IT que arme cada página desde cero:
-                no hay plantillas.
-              </p>
-            </li>
-            <li class="problem card" data-cats="proceso">
-              <span class="problem__n">05</span>
-              <div class="ptags"><span class="ptag ptag--proceso">Proceso</span></div>
-              <h3>Navegación poco intuitiva</h3>
-              <p>
-                "Nuestro Trabajo" no lleva a ninguna página, no hay buscador y la búsqueda y el error 404
-                aparecen en blanco.
-              </p>
-            </li>
-            <li class="problem card" data-cats="producto">
-              <span class="problem__n">06</span>
-              <div class="ptags"><span class="ptag ptag--producto">Producto</span></div>
-              <h3>Texto dentro de imágenes</h3>
-              <p>
-                Banners con el texto incrustado: cargan lento, se pixelan y no se pueden leer en pantallas
-                chicas ni con lector de pantalla.
-              </p>
-            </li>
-            <li class="problem card" data-cats="proceso financiero">
-              <span class="problem__n">07</span>
-              <div class="ptags">
-                <span class="ptag ptag--proceso">Proceso</span
-                ><span class="ptag ptag--financiero">Financiero</span>
-              </div>
-              <h3>Solo en español</h3>
-              <p>
-                La fundación participa en conferencias internacionales, pero el sitio no tiene una versión en
-                inglés: quienes llegan desde otros países no entienden qué hace y se pierden alianzas y
-                financiamiento.
-              </p>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <!-- 1.2 DATA -->
-      <section class="section section--grad-b" id="datos">
-        <div class="wrap">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow eyebrow--dark">Datos de uso · Google Analytics</p>
-              <h2 class="h2">Lo que dicen <br class="hide-sm" />los números.</h2>
-            </div>
-            <p class="section-head__aside">
-              Últimos 12 meses (oct 2025 – oct 2026). Los datos validaron algunas hipótesis y desarmaron
-              otras.
-            </p>
-          </div>
-          <div class="stats">
-            <div class="stat card">
-              <span class="stat__num" data-count="5400" data-prefix="~">~5.400</span
-              ><span class="stat__label">usuarios en el año, casi todos nuevos</span>
-            </div>
-            <div class="stat card stat--pink">
-              <span class="stat__num" data-count="50" data-suffix="%">50%</span
-              ><span class="stat__label">de las visitas son desde el celular</span>
-            </div>
-            <div class="stat card stat--lime">
-              <span class="stat__num" data-count="69" data-suffix="%">69%</span
-              ><span class="stat__label">de los usuarios están en Argentina</span>
-            </div>
-            <div class="stat card stat--blue">
-              <span class="stat__num" data-count="4" data-suffix="%">4%</span
-              ><span class="stat__label">llega a la página "Necesito Ayuda"</span>
-            </div>
-            <div class="stat card">
-              <span class="stat__num" data-count="47" data-suffix=" s">47 s</span
-              ><span class="stat__label">de interacción promedio por usuario</span>
-            </div>
-            <div class="stat card stat--orange">
-              <span class="stat__num" data-count="23">23</span
-              ><span class="stat__label">personas descargaron un PDF en todo el año</span>
-            </div>
-          </div>
-
-          <div class="grid-2 charts">
-            <div class="card chart">
-              <h3 class="h3">¿Desde dónde entran?</h3>
-              <div class="donut-row">
-                <div
-                  class="donut"
-                  style="--a: 50; --b: 49.7"
-                  role="img"
-                  aria-label="50% celular, 49,7% computadora, 0,3% tablet"
-                >
-                  <span>50%<small>celular</small></span>
-                </div>
-                <ul class="legend">
-                  <li><i style="background: var(--pink)"></i>Celular · 50%</li>
-                  <li><i style="background: var(--purple)"></i>Computadora · 49,7%</li>
-                  <li><i style="background: var(--lime)"></i>Tablet · 0,3%</li>
-                </ul>
-              </div>
-              <p class="note">
-                En celulares, Android (~2.000 usuarios) supera ampliamente a iOS (730). Las pantallas más
-                comunes miden entre 384 y 412 px de ancho: justo donde el sitio se rompe.
-              </p>
-            </div>
-            <div class="card chart">
-              <h3 class="h3">Páginas más vistas</h3>
-              <ul class="bars" id="bars"></ul>
-            </div>
-            <div class="card chart chart--wide">
-              <h3 class="h3">¿Desde qué países?</h3>
-              <div class="chart__split">
-                <ul class="bars" id="countryBars"></ul>
-                <div class="chart__notes">
-                  <p class="note">
-                    <b>31% de los usuarios está fuera de Argentina</b> e inglés es el 2º idioma de los
-                    navegadores, seguido por chino y portugués.
-                  </p>
-                  <p class="note">
-                    La página de la Conferencia Mundial de Manila tiene la mayor interacción del sitio (2,18
-                    vistas por usuario y 58 s) e INSPIRE · Manila 2026 creció 54% en una semana.
-                  </p>
-                  <p class="note note--muted">
-                    Parte del tráfico de EE.UU. viene de centros de datos (Ashburn, Council Bluffs) y
-                    probablemente incluye bots.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- 1.3 ENTREVISTA -->
-      <section class="section section--cream" id="entrevista">
-        <div class="wrap">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow">Entrevista con la fundación</p>
+              <p class="eyebrow">Qué encontré → qué decidí</p>
               <h2 class="h2">
-                Lo que nos dijo <br class="hide-sm" /><mark class="hl hl--lime">la directora</mark>.
+                Cuatro decisiones, <mark class="hl hl--lime">cada una con su evidencia</mark>.
               </h2>
             </div>
             <p class="section-head__aside">
-              Validé las proto-personas con la directora ejecutiva de Red por la Infancia. Confirmó buena
-              parte de la investigación, sumó dos públicos nuevos y cambió cómo pensamos la ayuda.
+              Salen de una auditoría de 21 problemas, 12 meses de Analytics, una entrevista con la directora
+              ejecutiva y un competitive audit de 18 organizaciones.
             </p>
           </div>
-          <div class="findings">
-            <article class="finding card" data-kind="cambia">
-              <span class="finding__tag">Cambia</span>
-              <h3>La fundación deriva, no asiste</h3>
-              <p>
-                No tiene equipo ni infraestructura para asistir casos. El aviso se queda, y Pedir ayuda tiene
-                que derivar a las líneas oficiales y a Bajalo Ya!.
-              </p>
-              <span class="finding__who"><img src="assets/img/personas/laura.webp" alt="" />Laura</span>
+          <div class="decisions">
+            <article class="decision card">
+              <p class="decision__data"><span>4%</span> llega a “Necesito Ayuda”</p>
+              <div class="decision__step">
+                <span class="decision__label">Lo que encontré</span>
+                <p>
+                  La fundación no atiende casos: deriva. Pero ninguno de los 10 sitios argentinos auditados
+                  deja llamar con un toque a una línea oficial.
+                </p>
+                <span class="decision__src">Analytics · Competitive audit</span>
+              </div>
+              <span class="decision__arrow" aria-hidden="true">↓</span>
+              <div class="decision__step decision__step--do">
+                <span class="decision__label">Lo que decidí</span>
+                <p>
+                  “Necesito ayuda” fijo en todas las pantallas, con una guía por situación y el 911, 137 y 102
+                  tocables.
+                </p>
+              </div>
             </article>
-            <article class="finding card" data-kind="cambia">
-              <span class="finding__tag">Cambia</span>
-              <h3>Navegar por público</h3>
-              <p>
-                A ella misma le cuesta encontrar información en el sitio. Propone replicar la navegación de
-                ReConectate, organizada por tipo de audiencia.
-              </p>
-              <span class="finding__who">Todas las personas</span>
+            <article class="decision card">
+              <p class="decision__data"><span>50%</span> entra desde el celular</p>
+              <div class="decision__step">
+                <span class="decision__label">Lo que encontré</span>
+                <p>
+                  En el celular, el titular queda debajo del pliegue y el menú no ofrece ni pedir ayuda ni
+                  donar.
+                </p>
+                <span class="decision__src">Auditoría · Analytics</span>
+              </div>
+              <span class="decision__arrow" aria-hidden="true">↓</span>
+              <div class="decision__step decision__step--do">
+                <span class="decision__label">Lo que decidí</span>
+                <p>Mobile-first, con una barra inferior fija para las acciones clave.</p>
+              </div>
             </article>
-            <article class="finding card" data-kind="suma">
-              <span class="finding__tag">Suma</span>
-              <h3>Prensa, un público aparte</h3>
-              <p>
-                Se separa de academia y del ámbito judicial/legislativo porque cada uno va a recibir recursos
-                distintos.
-              </p>
-              <span class="finding__who"
-                ><img src="assets/img/personas/valeria.webp" alt="" />Nueva: Valeria</span
-              >
+            <article class="decision card">
+              <p class="decision__data"><span>8</span> públicos distintos</p>
+              <div class="decision__step">
+                <span class="decision__label">Lo que encontré</span>
+                <p>
+                  La directora pidió navegar por público, como en ReConectate, y ningún sitio argentino
+                  auditado tiene una entrada por perfil.
+                </p>
+                <span class="decision__src">Entrevista · Competitive audit</span>
+              </div>
+              <span class="decision__arrow" aria-hidden="true">↓</span>
+              <div class="decision__step decision__step--do">
+                <span class="decision__label">Lo que decidí</span>
+                <p>Entradas “Soy…” en la home y en el menú, para validar con card sorting.</p>
+              </div>
             </article>
-            <article class="finding card" data-kind="suma">
-              <span class="finding__tag">Suma</span>
-              <h3>Profesionales de la salud</h3>
-              <p>Se suman al grupo de docentes y profesionales, con guías y protocolos propios.</p>
-              <span class="finding__who"
-                ><img src="assets/img/personas/javier.webp" alt="" />Nuevo: Dr. Javier</span
-              >
-            </article>
-            <article class="finding card" data-kind="suma">
-              <span class="finding__tag">Suma</span>
-              <h3>Donantes, voluntarios y financiadores</h3>
-              <p>Una sección pensada para ellos, con las notas en medios y el impacto en números.</p>
-              <span class="finding__who"><img src="assets/img/personas/diego.webp" alt="" />Diego</span>
-            </article>
-            <article class="finding card" data-kind="confirma">
-              <span class="finding__tag">Confirma</span>
-              <h3>Accesos directos por público</h3>
-              <p>
-                Familias: Campus (en desarrollo), ReConectate y Pantasaurus. Adolescentes: ReConectate y
-                Bajalo Ya!.
-              </p>
-              <span class="finding__who"
-                ><img src="assets/img/personas/silvia.webp" alt="" /><img
-                  src="assets/img/personas/camila.webp"
-                  alt=""
-                />Silvia y Camila</span
-              >
-            </article>
-            <article class="finding card" data-kind="confirma">
-              <span class="finding__tag">Confirma</span>
-              <h3>Aliados internacionales</h3>
-              <p>
-                Está de acuerdo con lo desarrollado y evalúa un nombre en inglés más fácil de pronunciar para
-                angloparlantes.
-              </p>
-              <span class="finding__who"><img src="assets/img/personas/maya.webp" alt="" />Maya</span>
-            </article>
-            <article class="finding card" data-kind="pendiente">
-              <span class="finding__tag">Pendiente</span>
-              <h3>Impacto sin datos</h3>
-              <p>
-                No sabe de dónde sacar los números. Necesita un sistema simple para registrar capacitaciones,
-                talleres, seminarios y reconocimientos a medida que suceden.
-              </p>
-              <span class="finding__who"><img src="assets/img/personas/equipo.webp" alt="" />Equipo RxI</span>
+            <article class="decision card">
+              <p class="decision__data"><span>31%</span> llega desde fuera de Argentina</p>
+              <div class="decision__step">
+                <span class="decision__label">Lo que encontré</span>
+                <p>
+                  La página de la Conferencia de Manila tiene la mayor interacción del sitio (2,18 vistas por
+                  usuario), pero todo está en español.
+                </p>
+                <span class="decision__src">Analytics</span>
+              </div>
+              <span class="decision__arrow" aria-hidden="true">↓</span>
+              <div class="decision__step decision__step--do">
+                <span class="decision__label">Lo que decidí</span>
+                <p>
+                  “Who we are” y las páginas clave en inglés, con un contacto para alianzas, antes del 14 de
+                  noviembre.
+                </p>
+              </div>
             </article>
           </div>
-        </div>
-      </section>
-
-      <!-- 1.4 USER GROUPS -->
-      <section class="section" id="usuarios">
-        <div class="wrap">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow">¿Para quién es el sitio?</p>
-              <h2 class="h2">Ocho grupos, <br class="hide-sm" />ocho necesidades.</h2>
-            </div>
-            <p class="section-head__aside">
-              A partir de los contenidos del sitio, sus llamados a la acción, los datos de uso y la entrevista
-              con la directora ejecutiva, identifiqué ocho grupos de usuarios.
-            </p>
-          </div>
-          <div class="groups">
-            <article class="group card" style="--c: var(--pink)">
-              <span class="group__id">UserA</span>
-              <h3>Personas que buscan ayuda</h3>
-              <p>
-                Familiares, vecinos o adolescentes ante una situación de violencia. Llegan angustiados y desde
-                el celular. La fundación no asiste: los deriva a las líneas oficiales y a Bajalo Ya!.
-              </p>
-            </article>
-            <article class="group card" style="--c: var(--lime)">
-              <span class="group__id">UserB</span>
-              <h3>Familias y cuidadores</h3>
-              <p>
-                Quieren aprender a detectar, prevenir y actuar. Buscan el Campus, ReConectate y Pantasaurus.
-              </p>
-            </article>
-            <article class="group card" style="--c: var(--yellow)">
-              <span class="group__id">UserC</span>
-              <h3>Docentes y profesionales de la educación y la salud</h3>
-              <p>
-                Docentes, equipos de salud, trabajadores sociales, psicólogos y abogados que buscan guías,
-                protocolos y capacitaciones.
-              </p>
-            </article>
-            <article class="group card" style="--c: var(--mint)">
-              <span class="group__id">UserD</span>
-              <h3>Niñas, niños y adolescentes</h3>
-              <p>
-                Llegan desde redes, casi siempre por celular. Necesitan llegar rápido a Bajalo Ya!, la 3ª
-                página más vista, y a ReConectate.
-              </p>
-            </article>
-            <article class="group card" style="--c: var(--orange)">
-              <span class="group__id">UserE</span>
-              <h3>Donantes, voluntarios y financiadores</h3>
-              <p>
-                Personas, empresas y fundaciones que necesitan confiar: buscan impacto en números, notas en
-                medios y una forma simple de colaborar.
-              </p>
-            </article>
-            <article class="group card" style="--c: var(--lilac)">
-              <span class="group__id">UserF</span>
-              <h3>Academia y ámbito judicial/legislativo</h3>
-              <p>
-                Investigadores, legisladores y operadores judiciales que buscan evidencia para políticas
-                públicas.
-              </p>
-            </article>
-            <article class="group card" style="--c: var(--teal)">
-              <span class="group__id">UserG</span>
-              <h3>Aliados internacionales</h3>
-              <p>
-                Delegaciones, redes y organismos que conocen a la fundación en conferencias como INSPIRE o
-                Manila 2026. No hablan español y necesitan entender rápido qué hace.
-              </p>
-            </article>
-            <article class="group card" style="--c: var(--blue)">
-              <span class="group__id">UserH · Nuevo</span>
-              <h3>Prensa</h3>
-              <p>
-                Periodistas que trabajan contra reloj y necesitan datos citables, voceros y un contacto que
-                responda rápido.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- 1.5 PERSONAS -->
-      <section class="section section--cream" id="personas">
-        <div class="wrap">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow">Proto-personas</p>
-              <h2 class="h2">Conocé a <mark class="hl hl--purple">las personas</mark>.</h2>
-            </div>
-            <p class="section-head__aside">
-              Nueve personas para ocho grupos, validadas con Google Analytics y con la directora ejecutiva.
-              Tocá una tarjeta para ver su historia completa.
-            </p>
-          </div>
-          <div class="filters" role="group" aria-label="Filtrar personas">
-            <button class="chip is-on" data-pfilter="all">Todas</button>
-            <button class="chip" data-pfilter="primary">Primarias</button>
-            <button class="chip" data-pfilter="secondary">Secundarias</button>
-          </div>
-          <div class="personas" id="personaGrid"></div>
-        </div>
-      </section>
-
-      <!-- 1.6 EMPATHY MAPS -->
-      <section class="section" id="empatia">
-        <div class="wrap">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow">Mapas de empatía</p>
-              <h2 class="h2">
-                Qué dice, piensa, <br class="hide-sm" /><mark class="hl hl--mint">hace y siente</mark>.
-              </h2>
-            </div>
-            <p class="section-head__aside">
-              Un mapa por persona para ponerse en su lugar en el momento en que llega al sitio, con los
-              dolores que hoy la frenan y lo que espera ganar.
-            </p>
-          </div>
-          <div class="tabs" role="tablist" aria-label="Elegir persona" id="empathyTabs"></div>
-          <div class="emap card" id="empathyMap" aria-live="polite"></div>
-        </div>
-      </section>
-
-      <!-- 1.7 USER STORIES -->
-      <section class="section section--grad-c" id="historias">
-        <div class="wrap">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow eyebrow--dark">Historias de usuario</p>
-              <h2 class="h2">Qué necesita <br class="hide-sm" />cada persona.</h2>
-            </div>
-            <p class="section-head__aside">
-              33 historias priorizadas con MoSCoW, cada una con criterios de aceptación y el dato que la
-              respalda.
-            </p>
-          </div>
-          <div class="filters filters--wrap" role="group" aria-label="Filtrar historias por prioridad">
-            <button class="chip is-on" data-sprio="all">Todas <b id="countAll"></b></button>
-            <button class="chip chip--must" data-sprio="Debe">Debe (MVP)</button>
-            <button class="chip chip--should" data-sprio="Debería">Debería</button>
-            <button class="chip chip--could" data-sprio="Podría">Podría</button>
-          </div>
-          <div
-            class="filters filters--wrap filters--avatars"
-            role="group"
-            aria-label="Filtrar historias por persona"
-            id="storyPersonaFilters"
-          ></div>
-          <div class="stories" id="stories" aria-live="polite"></div>
-        </div>
-      </section>
-
-      <!-- 1.8 JOURNEY MAPS -->
-      <section class="section" id="journeys">
-        <div class="wrap">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow">Mapas de recorrido</p>
-              <h2 class="h2">El camino, <mark class="hl hl--orange">paso a paso</mark>.</h2>
-            </div>
-            <p class="section-head__aside">
-              Acciones, tareas, sentimientos y oportunidades de mejora en cada momento. La curva muestra cómo
-              cambia el ánimo a lo largo del recorrido.
-            </p>
-          </div>
-          <div class="tabs" role="tablist" aria-label="Elegir persona" id="journeyTabs"></div>
-          <div class="journey card" id="journey"></div>
-        </div>
-      </section>
-
-      <!-- 1.9 INSIGHTS -->
-      <section class="section section--ink" id="insights">
-        <div class="wrap">
-          <p class="eyebrow eyebrow--lime">Aprendizajes</p>
-          <h2 class="h2 h2--light">Lo que me llevo <br class="hide-sm" />de esta etapa.</h2>
-          <div class="insights">
-            <article class="insight card">
-              <span class="insight__icon">01</span>
-              <h3>La derivación tiene que estar a un toque</h3>
-              <p>
-                La fundación no asiste casos: deriva. Pero solo el 4% llega a "Necesito Ayuda" y los números
-                no se pueden tocar. Es el problema más urgente del sitio.
-              </p>
-            </article>
-            <article class="insight card">
-              <span class="insight__icon">02</span>
-              <h3>Mobile-first no es opcional</h3>
-              <p>
-                La mitad entra desde el celular, sobre todo Android, en pantallas de 384–412 px. El rediseño
-                empieza por ahí.
-              </p>
-            </article>
-            <article class="insight card">
-              <span class="insight__icon">03</span>
-              <h3>Bajalo Ya! merece protagonismo</h3>
-              <p>
-                Es la 3ª página más vista y su público es adolescente: Camila pasó a ser persona primaria.
-              </p>
-            </article>
-            <article class="insight card">
-              <span class="insight__icon">04</span>
-              <h3>Sin medición no hay mejora</h3>
-              <p>
-                No hay eventos clave en Analytics: no se sabe cuántas personas piden ayuda, donan o descargan
-                una guía.
-              </p>
-            </article>
-            <article class="insight card">
-              <span class="insight__icon">05</span>
-              <h3>La fundación también habla al mundo</h3>
-              <p>
-                Casi un tercio de las visitas llega desde fuera de Argentina, sobre todo después de las
-                conferencias. Sin inglés, esas alianzas se pierden.
-              </p>
-            </article>
-            <article class="insight card">
-              <span class="insight__icon">06</span>
-              <h3>Cada público, su puerta de entrada</h3>
-              <p>
-                Hasta al equipo le cuesta encontrar información. Una navegación por audiencia, como la de
-                ReConectate, ordena el sitio para ocho públicos distintos.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===================================================== -->
-      <!-- ===== STAGE 02 · DEFINE ===== -->
-      <!-- ===================================================== -->
-      <section class="stage-hero stage-hero--define" id="define">
-        <div class="wrap">
-          <span class="stage-hero__num">02</span>
-          <div>
-            <p class="eyebrow">Etapa 2</p>
-            <h2 class="stage-hero__title">Define</h2>
-            <p class="stage-hero__lead">
-              De la investigación a decisiones: qué problema resolver para cada persona, qué esperamos lograr
-              y qué valor le va a dar el nuevo sitio.
-            </p>
-          </div>
-          <ul class="chips chips--static" aria-label="Métodos usados">
-            <li>Problem statements</li>
-            <li>Hipótesis If / Then</li>
-            <li>Propuestas de valor</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- 2.1 PROBLEM STATEMENTS -->
-      <section class="section" id="problem-statements">
-        <div class="wrap">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow">Problem statements</p>
-              <h2 class="h2">El problema, <mark class="hl hl--pink">persona por persona</mark>.</h2>
-            </div>
-            <p class="section-head__aside">
-              Formato: [persona] es [características] <b>que necesita</b> [necesidad] <b>porque</b> [insight].
-              El insight explica por qué eso es un problema para esa persona, según su personalidad y su
-              contexto.
-            </p>
-          </div>
-          <div class="central card">
-            <span class="central__label">Problema central</span>
-            <p id="centralProblem"></p>
-          </div>
-          <div class="statements" id="statements"></div>
-        </div>
-      </section>
-
-      <!-- 2.2 IF / THEN -->
-      <section class="section section--grad-b" id="hipotesis">
-        <div class="wrap">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow eyebrow--dark">Hipótesis If / Then</p>
-              <h2 class="h2">Si hacemos esto, <mark class="hl hl--lime">esperamos aquello</mark>.</h2>
-            </div>
-            <p class="section-head__aside">
-              Cada hipótesis responde a un problem statement e incluye cómo vamos a medirla en la etapa Test.
-            </p>
-          </div>
-          <div class="tabs" role="tablist" aria-label="Elegir persona" id="ifTabs"></div>
-          <div class="ifthen card" id="ifthen" aria-live="polite"></div>
-          <div class="central central--soft card">
-            <span class="central__label">Hipótesis central</span>
-            <p id="centralHypothesis"></p>
-          </div>
-        </div>
-      </section>
-
-      <!-- 2.3 VALUE PROPOSITIONS -->
-      <section class="vp" id="value">
-        <div class="vp__sticky">
-          <div class="wrap vp__head">
-            <div>
-              <p class="eyebrow">Propuestas de valor</p>
-              <h2 class="h2 vp__title" id="vpTitle">Primero, todas las ideas.</h2>
-            </div>
-            <div class="vp__steps" aria-hidden="true">
-              <span class="vp__step is-on" data-vstep="0">1 · Brainstorm</span>
-              <span class="vp__step" data-vstep="1">2 · Filtrar</span>
-              <span class="vp__step" data-vstep="2">3 · Conectar con personas</span>
-            </div>
-            <p class="vp__caption" id="vpCaption">
-              Listamos todas las funcionalidades y beneficios posibles, grandes y chicos, sin filtrar.
-            </p>
-          </div>
-          <div class="vp__board" id="vpBoard" aria-hidden="true"></div>
-          <ul class="vp__legend" id="vpLegend"></ul>
-        </div>
-      </section>
-      <ul class="sr-only" id="vpList" aria-label="Propuestas de valor finales"></ul>
-
-      <section class="section" id="uvp">
-        <div class="wrap grid-2">
-          <div class="card uvp">
-            <p class="eyebrow">Propuesta de valor general</p>
-            <p class="uvp__text" id="vpGeneral"></p>
-          </div>
-          <div class="card uvp uvp--accent">
-            <p class="eyebrow">Propuesta de valor única · a validar</p>
-            <p class="uvp__text" id="vpUnique"></p>
-            <p class="uvp__note">
-              Se contrastó en el competitive audit de la etapa Ideate: ningún sitio argentino auditado deja
-              llamar con un toque a una línea oficial, y lo más parecido a Bajalo Ya! (el reporte de Grooming
-              Argentina) no cubre el grooming ni deriva.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- NEXT STAGES -->
-      <!-- ===================================================== -->
-      <!-- ===== STAGE 03 · IDEATE ===== -->
-      <!-- ===================================================== -->
-      <section class="stage-hero stage-hero--ideate" id="ideate">
-        <div class="wrap">
-          <span class="stage-hero__num">03</span>
-          <div>
-            <p class="eyebrow">Etapa 3</p>
-            <h2 class="stage-hero__title">Ideate</h2>
-            <p class="stage-hero__lead">
-              Antes de bocetar, definir qué queremos lograr y mirar cómo resuelven lo mismo otras
-              organizaciones: qué copiar, qué evitar y qué espacio nadie está ocupando.
-            </p>
-          </div>
-          <ul class="chips chips--static" aria-label="Métodos usados">
-            <li>Goal statement</li>
-            <li>Competitive audit</li>
-            <li>Design implications</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- 3.1 GOAL STATEMENT -->
-      <section class="section" id="goal">
-        <div class="wrap">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow">Goal statement</p>
-              <h2 class="h2">Qué queremos <mark class="hl hl--lime">lograr</mark>.</h2>
-            </div>
-            <p class="section-head__aside">
-              Del problema al objetivo, con la plantilla del certificado de Google UX: producto, acción,
-              audiencia, impacto y cómo lo vamos a medir. Tocá cada parte para ver por qué está ahí.
-            </p>
-          </div>
-          <div class="gsflow">
-            <article class="gsflow__step card">
-              <span class="gsflow__label">El problema</span>
-              <p id="goalProblem"></p>
-            </article>
-            <span class="gsflow__arrow" aria-hidden="true">→</span>
-            <article class="gsflow__step gsflow__step--goal card">
-              <span class="gsflow__label">El objetivo</span>
-              <p class="gs" id="goalStatement"></p>
-              <div
-                class="filters filters--wrap gs__chips"
-                role="group"
-                aria-label="Partes del goal statement"
-                id="goalChips"
-              ></div>
-              <p class="gs__why" id="goalWhy" aria-live="polite"></p>
-            </article>
-            <span class="gsflow__arrow" aria-hidden="true">→</span>
-            <article class="gsflow__step card">
-              <span class="gsflow__label">Lo que buscamos</span>
-              <ul class="gsflow__list" id="goalAchieve"></ul>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- 3.2 COMPETITIVE AUDIT -->
-      <section class="section section--cream" id="competencia">
-        <div class="wrap">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow">Competitive audit</p>
-              <h2 class="h2">¿Cómo lo resuelven <mark class="hl hl--purple">otros</mark>?</h2>
-            </div>
-            <p class="section-head__aside" id="auditGoal"></p>
-          </div>
-          <div class="filters" role="group" aria-label="Filtrar competidores">
-            <button class="chip is-on" data-rfilter="all">Todos</button>
-            <button class="chip" data-rfilter="direct">Directos</button>
-            <button class="chip" data-rfilter="indirect">Indirectos</button>
-            <button class="chip" data-rfilter="ar">Argentina</button>
-            <button class="chip" data-rfilter="intl">Otros países</button>
-          </div>
-          <div class="rivals" id="rivals"></div>
-        </div>
-      </section>
-
-      <!-- 3.3 COMPARACIÓN -->
-      <section class="section" id="comparacion">
-        <div class="wrap">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow">Comparación</p>
-              <h2 class="h2">Lo que encontré, <mark class="hl hl--orange">lente por lente</mark>.</h2>
-            </div>
-            <p class="section-head__aside">
-              Cinco lentes, una por cada pregunta del audit, con Red por la Infancia como punto de partida.
-              Elegí una fila para ver la evidencia y desplazá la tabla para ver las 18 organizaciones.
-            </p>
-          </div>
-          <div class="mx card">
-            <div class="mx__scroll" tabindex="0" aria-label="Matriz comparativa, desplazable horizontalmente">
-              <div class="mx__table" id="matrix"></div>
-            </div>
-            <div class="mx__legend" aria-hidden="true">
-              <span><i class="mx__dot mx__dot--yes"></i>Sí</span>
-              <span><i class="mx__dot mx__dot--partial"></i>Parcial</span>
-              <span><i class="mx__dot mx__dot--no"></i>No</span>
-              <span><i class="mx__dot mx__dot--unknown"></i>No verificable</span>
-            </div>
-            <p class="mx__evidence" id="matrixEvidence" aria-live="polite"></p>
-          </div>
-        </div>
-      </section>
-
-      <!-- 3.4 GAP -->
-      <section class="section section--ink" id="gap">
-        <div class="wrap gap">
-          <div>
-            <p class="eyebrow eyebrow--lime">El gap</p>
-            <h2 class="h2 h2--light">
-              Todos le hablan al donante. <br class="hide-sm" />En Argentina, nadie ordena el sitio alrededor
-              de quien llega.
-            </h2>
-            <p class="gap__lead">
-              Cuántos de los 18 competidores resuelven cada cosa. Lo que el sector hace bien está arriba; lo
-              que queda vacío, abajo. Ese vacío es la posición que puede ocupar Red por la Infancia.
-            </p>
-          </div>
-          <ul class="gapbars" id="gapBars"></ul>
-        </div>
-      </section>
-
-      <!-- 3.5 DESIGN IMPLICATIONS -->
-      <section class="section section--grad-b" id="implicancias">
-        <div class="wrap">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow eyebrow--dark">Design implications</p>
-              <h2 class="h2">Qué cambia <mark class="hl hl--pink">en el diseño</mark>.</h2>
-            </div>
-            <p class="section-head__aside">
-              Cada hallazgo se convierte en una decisión o una pregunta para la próxima etapa: bocetos,
-              arquitectura de información y prototipo.
-            </p>
-          </div>
-          <div class="impls" id="implications"></div>
-          <a class="btn btn--ghost impls__docs" id="ideateDocs" href="#" target="_blank" rel="noopener"
-            >Ver la investigación completa →</a
+          <a class="decisions__more" href="proceso.html#implicancias"
+            >Ver las nueve implicancias de diseño →</a
           >
         </div>
       </section>
 
-      <section class="section" id="proximamente">
+      <!-- ===== ACCESO DIRECTO AL PROCESO ===== -->
+      <section class="section access" id="proceso">
         <div class="wrap">
-          <p class="eyebrow">Lo que viene</p>
-          <h2 class="h2">Próximas etapas.</h2>
-          <div class="next">
-            <article class="next__card card" style="--c: var(--yellow)">
-              <span class="next__n">04</span>
-              <h3>Prototype</h3>
-              <p>Wireframes, sistema de diseño y prototipo mobile-first en Figma.</p>
-              <span class="lock">Próximamente</span>
-            </article>
-            <article class="next__card card" style="--c: var(--blue)">
-              <span class="next__n">05</span>
-              <h3>Test</h3>
-              <p>Tests de usabilidad con personas reales e iteración.</p>
-              <span class="lock">Próximamente</span>
-            </article>
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">El proceso</p>
+              <h2 class="h2">Entrá directo a <mark class="hl hl--purple">la etapa que te interese</mark>.</h2>
+            </div>
+            <p class="section-head__aside">
+              Design thinking en cinco etapas, con cada artefacto y la evidencia detrás de cada decisión.
+            </p>
           </div>
+          <ol class="timeline" id="stageCards"></ol>
+          <a class="btn access__btn" href="proceso.html">Ver el proyecto en detalle →</a>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="contacto">
       <div class="wrap footer__inner">
-        <p class="footer__big">¿Charlamos?</p>
+        <h2 class="footer__big">¿Hablamos?</h2>
+        <p class="footer__lead">
+          Estoy abierta a nuevas oportunidades, en Argentina o en el exterior. Trabajo en español y en inglés.
+        </p>
         <div class="footer__links">
-          <a class="btn" href="https://github.com/sofiadeane" target="_blank" rel="noopener">GitHub ↗</a>
-          <a class="btn btn--ghost" href="#top">Volver arriba ↑</a>
+          <a class="btn" href="mailto:sofiamariadeane@gmail.com">Escribime</a>
+          <a
+            class="btn btn--ghost"
+            href="https://www.linkedin.com/in/sofia-maria-deane-5a7285275"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn ↗</a
+          >
         </div>
+        <p class="footer__mail">
+          <span>sofiamariadeane@gmail.com</span>
+          <button class="footer__copy" type="button" data-copy="sofiamariadeane@gmail.com" aria-live="polite">
+            Copiar
+          </button>
+        </p>
+        <a class="footer__next" href="proceso.html">→ Ver proyecto en detalle</a>
         <p class="footer__small">
-          Caso de estudio de Sofía Deane · 2026. Capturas del sitio público redporlainfancia.org usadas con
-          fines de análisis.
+          Caso de estudio de Sofía Deane · 2026. Diseñado y programado por mí. Capturas del sitio público
+          redporlainfancia.org usadas con fines de análisis.
         </p>
       </div>
     </footer>
 
-    <!-- MODALS -->
-    <dialog class="modal modal--persona" id="personaModal" aria-labelledby="pmTitle">
-      <div class="modal__inner" id="personaModalBody"></div>
-    </dialog>
-    <dialog class="modal modal--img" id="imgModal" aria-label="Captura ampliada">
-      <div class="modal__inner" id="imgModalBody"></div>
-    </dialog>
-
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/landing.js"></script>
   </body>
 </html>

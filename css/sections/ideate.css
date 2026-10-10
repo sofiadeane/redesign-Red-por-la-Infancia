@@ -181,6 +181,8 @@
 /* Matriz por lente */
 .mx {
   padding: 8px 8px 20px;
+  /* Evita que la tabla ancha estire la página en el celular (la tabla ya se desplaza adentro) */
+  overflow: hidden;
 }
 .mx__scroll {
   overflow-x: auto;

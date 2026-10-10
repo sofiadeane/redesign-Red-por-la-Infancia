@@ -7,6 +7,8 @@
 }
 html {
   scroll-behavior: smooth;
+  /* Los anclajes no quedan tapados por la barra superior fija */
+  scroll-padding-top: 76px;
   -webkit-text-size-adjust: 100%;
 }
 body {
@@ -177,5 +179,11 @@ a {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+}
+
+@media (max-width: 760px) {
+  html:has(.topbar--process) {
+    scroll-padding-top: 118px;
   }
 }

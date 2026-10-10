@@ -4,11 +4,10 @@
 import { $, $$ } from "../utils/dom.js";
 
 const STAGE_SECTIONS = [
-  { stage: "resumen", selector: "#resumen" },
   { stage: "empathize", selector: "#empathize" },
   { stage: "define", selector: "#define" },
   { stage: "ideate", selector: "#ideate" },
-  { stage: "prototype", selector: "#proximamente" },
+  { stage: "prototype", selector: "#aprendizajes" },
 ];
 
 function updateProgress(bar) {
@@ -22,7 +21,7 @@ function updateActiveStage(nav) {
 
   STAGE_SECTIONS.forEach(({ stage, selector }) => {
     const section = $(selector);
-    if (section && section.offsetTop <= threshold) current = stage;
+    if (section && section.getBoundingClientRect().top + window.scrollY <= threshold) current = stage;
   });
 
   $$(".stage-link", nav).forEach((link) => {
@@ -41,7 +40,7 @@ export function initNavigation() {
   $$(".stage-link.is-locked", nav).forEach((link) =>
     link.addEventListener("click", (event) => {
       event.preventDefault();
-      $("#proximamente").scrollIntoView({ behavior: "smooth" });
+      $("#lo-que-viene").scrollIntoView({ behavior: "smooth" });
     }),
   );
 
