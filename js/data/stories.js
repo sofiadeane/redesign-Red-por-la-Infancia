@@ -384,4 +384,16 @@ export const stories = [
     ],
     evidence: "la directora ejecutiva no sabe de dónde sacar los números de impacto ni cómo registrarlos.",
   },
+  {
+    id: "US-34",
+    priority: "Debería",
+    persona: "equipo",
+    text: "Como equipo, quiero recuperar la mayor cantidad de actividad historica posible y dejarlo documentado en el sitio para tener en la sección de impacto datos que muestren nuestra trayectoria e impacto real.",
+    criteria: [
+      "Cargar una actividad lleva menos de 2 minutos desde el celular",
+      "Cada registro tiene tipo, fecha, lugar, público y cantidad de personas",
+      "Los números del sitio se actualizan a partir de esos registros",
+    ],
+    evidence: "la directora ejecutiva no sabe de dónde sacar los números de impacto ni cómo registrarlos.",
+  },
 ];

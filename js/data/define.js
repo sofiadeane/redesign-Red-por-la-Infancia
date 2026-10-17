@@ -164,7 +164,7 @@ export const defineItems = [
     because:
       "es un equipo chico, sin perfil técnico, que reparte su tiempo entre campañas, capacitaciones y alianzas: cada tarea que depende de IT o que hay que duplicar por idioma queda postergada",
     painPoints: ["soporte", "proceso"],
-    stories: "US-19, US-20, US-26, US-29, US-33",
+    stories: "US-19, US-20, US-26, US-29, US-33, US-34",
     hypothesis: {
       if: "el sitio usa plantillas editables para campañas, recursos y noticias, y mide eventos clave en Analytics",
       then: "el equipo va a publicar contenido nuevo sin depender de IT y va a saber qué funciona",
